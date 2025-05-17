@@ -42,4 +42,4 @@ export class Cuenta{
 //showmodal()
 //insertRow(index) (añadir -1 para ponerlo en el final)
 //cell.textContent
-//Juan Actualizo
+//Juangithub
