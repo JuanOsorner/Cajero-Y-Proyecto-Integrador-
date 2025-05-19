@@ -11,7 +11,7 @@ let Movimientos = [];
 
 //Variables (PELAEZ)
 
-let Nombre = "Alejandro";
+let Nombre = '';
 let Apellidos = '';
 let Direccion = '';
 let Identificacion = '';
@@ -63,9 +63,23 @@ btnActualizar1.addEventListener('click',()=>{
 
 const btnActualizar2 = document.getElementById('actualizar2');
 btnActualizar2.addEventListener('click',()=>{
-    Apellidos = document.getElementById('apellidos');
-    Apellidos = docume
-    document.getElementById('Capellidos').textContent = cliente.modificar(2,Apellidos);
+    Apellidos = document.getElementById('apellidos').value;
+    cliente.modificar(2,Apellidos);
+    document.getElementById('Capellidos').textContent = Apellidos;
+});
+
+const btnActualizar3 = document.getElementById('actualizar3');
+btnActualizar3.addEventListener('click',()=>{
+    Direccion = document.getElementById('direccion').value; //PARA ACCEDER AL VALOR
+    cliente.modificar(3,Direccion);
+    document.getElementById('Cdireccion').textContent = Direccion;
+});
+
+const btnActualizar4 = document.getElementById('actualizar4');
+btnActualizar4.addEventListener('click',()=>{
+    Identificacion = document.getElementById('identificacion').value;
+    cliente.modificar(4,Identificacion);
+    document.getElementById('Cidentificacion').textContent = Identificacion;
 });
 
 /*-----------------------------------------------------------------------*/
