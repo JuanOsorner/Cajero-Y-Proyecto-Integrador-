@@ -1,6 +1,8 @@
 import { Cuenta } from "./Cuenta.js"; //POR FAVOR INSERTAR EL .js
+import { Cliente } from "./Cliente.js";
 
 const cuenta = new Cuenta('1000222',10000,[]);
+const cliente = new Cliente();
 
 //Vamos a definir los botones del html (OSORNER)
 
