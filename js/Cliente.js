@@ -41,6 +41,8 @@ export class Cliente extends Cuenta{
 
   generarNumeroCuenta() {
     // Simula número de cuenta aleatorio de 10 dígitos
-    this.getNumero = Math.floor(1000000000 + Math.random() * 9000000000);
+    let NumeroCuenta = Math.floor(1000000000 + Math.random() * 9000000000);
+    this.setNumero(NumeroCuenta);
+    return this.getNumero();
   }
 }

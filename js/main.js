@@ -82,4 +82,16 @@ btnActualizar4.addEventListener('click',()=>{
     document.getElementById('Cidentificacion').textContent = Identificacion;
 });
 
+const btnGenerarCuenta = document.getElementById('btn-generar-cuenta');
+btnGenerarCuenta.addEventListener('click',()=>{
+    document.getElementById('numeroCuenta').textContent = cliente.generarNumeroCuenta();
+    document.getElementById('dlg2').showModal();
+});
+
+const btnCerrar2 = document.getElementById('cerrar-dlg2');
+btnCerrar2.addEventListener("click", () => {
+    const dlg2 = document.getElementById('dlg2');
+    dlg2.close();
+});
+
 /*-----------------------------------------------------------------------*/
