@@ -8,6 +8,15 @@ export class Cuenta{
         this.#saldo = saldo;
         this.#movimientos = movimientos;
     }
+
+    getNumero(){
+        return this.#numero;
+    }
+
+    setNumero(numero=''){
+        this.#numero = numero;
+    }
+
     //Lo ideal seria aplicar el modal (HAY QUE INVESTIGAR)
     consultarSaldo(){
         if(this.#saldo===0){
@@ -25,8 +34,8 @@ export class Cuenta{
     //Asi tipamos en JS
     //Aprovechamos el insertRow y el insertCell
     //-1 siempre es n-1 modulo n
-    registrarMovimientos(tipo='',monto=0){
-        if(tipo == '' || monto==0){
+    registrarMovimientos(tipo="",monto=0){
+        if(tipo === "" || monto===0){
             alert("NO SE HA REALIZADO MOVIMIENTOS");
             alert("INGRESE EL TIPO Y EL MONTO");
         }else{

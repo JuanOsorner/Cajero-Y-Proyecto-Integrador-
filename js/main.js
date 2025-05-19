@@ -1,20 +1,24 @@
 import { Cuenta } from "./Cuenta.js"; //POR FAVOR INSERTAR EL .js
 import { Cliente } from "./Cliente.js";
 
+//ES IMPORTANTE DEFINIR LAS VARIABLES
+
 //Variables (OSORNER)
 
-
+let Numero = '';
+let Saldo = 0;
+let Movimientos = [];
 
 //Variables (PELAEZ)
 
-let Nombre = '';
+let Nombre = "Alejandro";
 let Apellidos = '';
 let Direccion = '';
 let Identificacion = '';
 let Estado = true;
 
-const cuenta = new Cuenta('1000222',10000,[]);
-const cliente = new Cliente(Nombre,Apellidos,Direccion,Identificacion,Estado);
+const cuenta = new Cuenta(Numero,Saldo,Movimientos);
+const cliente = new Cliente(Numero,Saldo,Movimientos,Nombre,Apellidos,Direccion,Identificacion,Estado);
 
 /*-----------------------------------------------------------------------*/
 
@@ -52,13 +56,15 @@ btnCerrar1.addEventListener("click", () => {
 
 const btnActualizar1 = document.getElementById('actualizar1');
 btnActualizar1.addEventListener('click',()=>{
-    Nombre = document.getElementById('nombre');
-    document.getElementById('Cnombre').textContent = cliente.modificar(1,Nombre);
+    Nombre = document.getElementById('nombre').value; //PARA ACCEDER AL VALOR
+    cliente.modificar(1,Nombre);
+    document.getElementById('Cnombre').textContent = Nombre;
 });
 
 const btnActualizar2 = document.getElementById('actualizar2');
 btnActualizar2.addEventListener('click',()=>{
     Apellidos = document.getElementById('apellidos');
+    Apellidos = docume
     document.getElementById('Capellidos').textContent = cliente.modificar(2,Apellidos);
 });
 

@@ -5,17 +5,17 @@ export class Cliente extends Cuenta{
     #direccion;
     #identificacion;
     #cuenta;
-  constructor(nombre='', apellido='', direccion='', identificacion='',cuenta = true) {
+  constructor(numero='', saldo=0, movimientos = [], nombre='', apellido='', direccion='', identificacion='',cuenta = true) {
     super(numero,saldo,movimientos);
     this.#nombre = nombre;
     this.#apellido = apellido;
     this.#direccion = direccion;
     this.#identificacion = identificacion;
-    this.#cuenta = cuenta; // Se asigna luego
+    this.#cuenta = cuenta; 
   }
   modificar(dato=0,cambio=''){
-    if(cambio==''){
-        alert("NO SE HA REALIZADO NINGUN CAMBIO");
+    if(cambio==""){
+        alert("NO SE HAN HECHO CAMBIOS");
     }else{
         switch(dato){
             case 1:
@@ -31,14 +31,16 @@ export class Cliente extends Cuenta{
                 this.#identificacion = cambio;
             break;
             default:
-                alert("NO SE HA MODIFICADO NINGUN DATO");
+                alert("NO SE HAN INGRESADO DATOS");
             break;
         }
     }
-    return cambio;
   }
+
+  //(*) Para usar las variables protegidas toca ir a los getters and setters
+
   generarNumeroCuenta() {
     // Simula número de cuenta aleatorio de 10 dígitos
-    numero = Math.floor(1000000000 + Math.random() * 9000000000);
+    this.getNumero = Math.floor(1000000000 + Math.random() * 9000000000);
   }
 }
