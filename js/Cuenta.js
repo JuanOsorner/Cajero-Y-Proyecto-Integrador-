@@ -17,21 +17,27 @@ export class Cuenta{
         }else{
             //SUPERIMPORTANTE
             document.getElementById('saldoU').textContent = "Su saldo es de: "+this.#saldo;
+            const dlg = document.getElementById('dlg');
+            dlg.showModal();
         }
     }
     //ESTO ES SUPER IMPORTANTE
     //Asi tipamos en JS
     //Aprovechamos el insertRow y el insertCell
+    //-1 siempre es n-1 modulo n
     registrarMovimientos(tipo='',monto=0){
-        this.#movimientos.push(tipo,monto);
-        const tabla1 = document.getElementById('tabla1');
-        const fila = tabla1.insertRow(-1);
-        const celda1 = fila.insertCell(-1);
-        celda1.textContent = tipo;
-        const celda2 = fila.insertCell(-1);
-        celda2.textContent = monto;
-        const dlg1 = document.getElementById('dlg1');
-        dlg1.showModal();
+        if(tipo == '' || monto==0){
+            alert("NO SE HA REALIZADO MOVIMIENTOS");
+            alert("INGRESE EL TIPO Y EL MONTO");
+        }else{
+            this.#movimientos.push(tipo,monto);
+            const tabla1 = document.getElementById('tabla1');
+            const fila = tabla1.insertRow(-1);
+            const celda1 = fila.insertCell(-1);
+            celda1.textContent = tipo;
+            const celda2 = fila.insertCell(-1);
+            celda2.textContent = monto;
+        }
     }
     //Intentando hacer funcionar esto.
     consultarMovimientos(){
