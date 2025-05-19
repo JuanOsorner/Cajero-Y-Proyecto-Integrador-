@@ -67,27 +67,34 @@
         <p class="subtitle">Sus datos</p>
         <div class="menu">
           <div class="form-group">
-            <label for="nombre">Nombre</label><br>
-            <input type="text" id="nombre" placeholder="Ingrese nuevo nombre"/>
+            <label for="nombre">Nombre:<p id="Cnombre"></p><hr></label>
+            <input type="text" id="nombre" placeholder="Ingrese nuevo nombre"/><br><br>
+            <button id="actualizar1">Actualizar</button>
           </div>
           <div class="form-group">
-            <label for="apellidos">Apellidos</label><br>
-            <input type="text" id="apellidos" placeholder="Ingrese nuevo apellido"/>
+            <label for="apellidos">Apellidos: <p id="Capellidos"></p><hr></label>
+            <input type="text" id="apellidos" placeholder="Ingrese nuevo apellido"/><br><br>
+            <button id="actualizar2">Actualizar</button>
           </div>
           <div class="form-group">
-            <label for="direccion">Dirección</label><br>
-            <input type="text" id="direccion" placeholder="Ingrese nueva direccion"/>
+            <label for="direccion">Dirección: <p id="Cdireccion"></p><hr></label>
+            <input type="text" id="direccion" placeholder="Ingrese nueva direccion"/><br><br>
+            <button id="actualizar3">Actualizar</button>
           </div>
           <div class="form-group">
-            <label for="identificacion">Identificación</label><br>
-            <input type="text" id="identificacion" placeholder="Ingrese nueva identificacion"/>
+            <label for="identificacion">Identificación: <p id="Cidentificacion"></p><hr></label>
+            <input type="text" id="identificacion" placeholder="Ingrese nueva identificacion"/><br><br>
+            <button id="actualizar4">Actualizar</button>
           </div>
           <div class="form-group">
-            <label for="estado">Estado de cuenta</label><br>
+            <label for="estado">Estado de cuenta: <p id="Cestado"></p><hr></label><br>
             <!-- Sin input debajo -->
           </div>
           <!-- Botón al final -->
           <button id="btn-generar-cuenta">Generar número de cuenta</button>
+          <dialog id="dlg2">
+
+          </dialog>
           <button id="volver1">Volver</button>
         </div>
       </div>

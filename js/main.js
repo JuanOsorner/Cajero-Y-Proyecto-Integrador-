@@ -1,8 +1,22 @@
 import { Cuenta } from "./Cuenta.js"; //POR FAVOR INSERTAR EL .js
 import { Cliente } from "./Cliente.js";
 
+//Variables (OSORNER)
+
+
+
+//Variables (PELAEZ)
+
+let Nombre = '';
+let Apellidos = '';
+let Direccion = '';
+let Identificacion = '';
+let Estado = true;
+
 const cuenta = new Cuenta('1000222',10000,[]);
-const cliente = new Cliente();
+const cliente = new Cliente(Nombre,Apellidos,Direccion,Identificacion,Estado);
+
+/*-----------------------------------------------------------------------*/
 
 //Vamos a definir los botones del html (OSORNER)
 
@@ -30,6 +44,22 @@ const btnCerrar1 = document.getElementById('cerrar-dlg1');
 btnCerrar1.addEventListener("click", () => {
     const dlg1 = document.getElementById('dlg1');
     dlg1.close();
+});
+
+/*-----------------------------------------------------------------------*/
+
+//Vamos a definir los ids (PELAEZ)
+
+const btnActualizar1 = document.getElementById('actualizar1');
+btnActualizar1.addEventListener('click',()=>{
+    Nombre = document.getElementById('nombre');
+    document.getElementById('Cnombre').textContent = cliente.modificar(1,Nombre);
+});
+
+const btnActualizar2 = document.getElementById('actualizar2');
+btnActualizar2.addEventListener('click',()=>{
+    Apellidos = document.getElementById('apellidos');
+    document.getElementById('Capellidos').textContent = cliente.modificar(2,Apellidos);
 });
 
 /*-----------------------------------------------------------------------*/
