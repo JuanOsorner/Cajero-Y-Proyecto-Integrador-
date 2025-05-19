@@ -60,6 +60,66 @@
       </div>
     </div>
   </div>
+
+  <div class="atm">
+      <div class="screen">
+        <h1 class="title">Datos del cliente</h1>
+        <p class="subtitle">Sus datos</p>
+        <div class="menu">
+          <div class="form-group">
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" />
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos</label><br>
+            <input type="text" id="apellidos" />
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección</label><br>
+            <input type="text" id="direccion" />
+          </div>
+          <div class="form-group">
+            <label for="identificacion">Identificación</label><br>
+            <input type="text" id="identificacion" />
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado de cuenta</label><br>
+            <!-- Sin input debajo -->
+          </div>
+          <!-- Botón al final -->
+          <button id="btn-generar-cuenta">Generar número de cuenta</button>
+          <button id="volver1">Volver</button>
+        </div>
+      </div>
+
+      <div class="controls">
+      <div class="keypad">
+        <button id="btn-1">1</button>
+        <button id="btn-2">2</button>
+        <button id="btn-3">3</button>
+        <button id="btn-4">4</button>
+        <button id="btn-5">5</button>
+        <button id="btn-6">6</button>
+        <button id="btn-7">7</button>
+        <button id="btn-8">8</button>
+        <button id="btn-9">9</button>
+        <button id="btn-star">*</button>
+        <button id="btn-0">0</button>
+        <button id="btn-pound">#</button>
+      </div>
+      <div class="card-container">
+        <div class="card-slot"></div>
+        <div class="card-slot"></div>
+      </div>
+      <div class="func-buttons">
+        <button id="btn-red"></button>
+        <button id="btn-yellow"></button>
+        <button id="btn-green"></button>
+        <button id="btn-white"></button>
+      </div>
+    </div>
+    </div>
+
   <script type="module" src="js/Cuenta.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
