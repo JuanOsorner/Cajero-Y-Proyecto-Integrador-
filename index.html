@@ -1,0 +1,68 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cajero Electrónico</title>
+  <link rel="stylesheet" href="/Cuenta Corriente/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="atm"> 
+      <div class="screen">
+        <h1 class="title">Cajero Electrónico</h1>
+        <p class="subtitle">Bienvenido a tu Cuenta Corriente</p>
+        <div class="menu">
+          <button id="btn-consignar-dinero">Consignar Dinero</button>
+          <dialog id="dlg"> 
+            <input type="number" id="monto-consignar" placeholder="Ingrese el valor a consignar" />
+            <button id="cerrar">Cerrar</button>
+          </dialog>
+
+          <button id="btn-retirar-dinero">Retirar Dinero</button>
+          <dialog id="dl1"> 
+            <input type="number" id="monto-retiro" placeholder="Ingrese el valor a retirar" />
+            <button id="Volver1">Volver</button>
+          </dialog>
+          
+          <button class="btn-volver" id="btn-volver">Volver</button>
+          <!--NO SE MUESTRA A PRIORI-->
+          <dialog id="dlg">
+            <p id="saldoU"></p>
+            <button id="cerrar">Cerrar</button>
+          </dialog>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="Controles del cajero">
+        <div class="keypad" aria-label="Teclado numérico">
+          <button id="btn-1" aria-label="Número 1">1</button>
+          <button id="btn-2" aria-label="Número 2">2</button>
+          <button id="btn-3" aria-label="Número 3">3</button>
+          <button id="btn-4" aria-label="Número 4">4</button>
+          <button id="btn-5" aria-label="Número 5">5</button>
+          <button id="btn-6" aria-label="Número 6">6</button>
+          <button id="btn-7" aria-label="Número 7">7</button>
+          <button id="btn-8" aria-label="Número 8">8</button>
+          <button id="btn-9" aria-label="Número 9">9</button>
+          <button id="btn-star" aria-label="Asterisco">*</button>
+          <button id="btn-0" aria-label="Número 0">0</button>
+          <button id="btn-pound" aria-label="Numeral">#</button>
+        </div>
+        <div class="card-container" aria-label="Ranuras para tarjetas">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+        </div>
+        <div class="func-buttons" aria-label="Botones funcionales">
+          <button id="btn-red" aria-label="Botón rojo"></button>
+          <button id="btn-yellow" aria-label="Botón amarillo"></button>
+          <button id="btn-green" aria-label="Botón verde"></button>
+          <button id="btn-white" aria-label="Botón blanco"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/CuentaCorriente.js"></script>
+  <script src="js/main.js"></script>
+  
+</body>
+</html>
