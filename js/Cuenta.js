@@ -17,6 +17,14 @@ export class Cuenta{
         this.#numero = numero;
     }
 
+    getSaldo(){
+        return this.#saldo;
+    }
+
+    setSaldo(saldo=0){
+        this.#saldo = saldo;
+    }
+
     //Lo ideal seria aplicar el modal (HAY QUE INVESTIGAR)
     consultarSaldo(){
         if(this.#saldo===0){

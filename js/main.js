@@ -24,6 +24,10 @@ const cliente = new Cliente(Numero,Saldo,Movimientos,Nombre,Apellidos,Direccion,
 
 //Vamos a definir los botones del html (OSORNER)
 
+const caja1 = document.getElementById('caja1');
+const caja2 = document.getElementById('caja2');
+const caja3 = document.getElementById('caja3');
+
 const btnConsultar = document.getElementById('btn-top-consultar');
 btnConsultar.addEventListener("click", () => {
     cuenta.consultarSaldo();
@@ -48,6 +52,18 @@ const btnCerrar1 = document.getElementById('cerrar-dlg1');
 btnCerrar1.addEventListener("click", () => {
     const dlg1 = document.getElementById('dlg1');
     dlg1.close();
+});
+
+const btnCliente = document.getElementById('btn-consignar-cliente');
+btnCliente.addEventListener('click',()=>{
+    caja1.style.display = "none";
+    caja2.style.display = "flex";
+});
+
+const volver1 = document.getElementById('volver1');
+volver1.addEventListener('click',()=>{
+    caja2.style.display = "none";
+    caja1.style.display = "flex";
 });
 
 /*-----------------------------------------------------------------------*/
@@ -95,6 +111,9 @@ btnCerrar2.addEventListener("click", () => {
 });
 
 /*-----------------------------------------------------------------------*/
+
+//Vamos a definir los botones (JONIER)
+
 
 
 
