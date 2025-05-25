@@ -5,13 +5,26 @@ export class registro{
     #ConfirmarContraseña;
     #direccion;
     #vectorBase;
-    constructor(Usuario='',contraseña='',Ccontraseña='',direccion='',vectorBase=[]){
+    constructor(direccion='',contraseña='',Usuario='',Ccontraseña='',vectorBase=[]){
+        super(direccion,contraseña);
         this.#Usuario = Usuario;
-        this.#contraseña = contraseña;
         this.#ConfirmarContraseña = Ccontraseña;
-        this.#direccion = direccion;
         this.#vectorBase = vectorBase;
     }
+
+    getUsuario(){
+        return this.#Usuario;
+    }
+    setUsuario(Usuario){
+        this.#Usuario = Usuario;
+    }
+    getCContraseña(){
+        return this.#ConfirmarContraseña;
+    }
+    setCContraseña(confirContra){
+        this.#ConfirmarContraseña = confirContra;
+    }
+
     actualizarDatos(){
         //PASAMOS LOS DATOS A NUEVAS VARIABLES PARA QUE NO SE PIERDAN
         let Vect = [];
