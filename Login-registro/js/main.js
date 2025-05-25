@@ -47,21 +47,35 @@ showSection('login');
 /*----------------------------------------(OSORNER)----------------------------------------------*/
 let Tabla = [];
 let i = 0;
-document.getElementById('boton1').addEventListener('click',()=>{
+//preventDefault es para evitar que la pagina se cargue cuando le damos al boton
+document.getElementById('boton1').addEventListener('click',(evento1)=>{
+    evento1.preventDefault();
     const registerName = document.getElementById('registerName').value;
     const registerEmail = document.getElementById('registerEmail').value;
     const registerPassword = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    const registrar = new registro(registerEmail,registerPassword,registerName,confirmPassword,registerPassword,[]);
-    i++;
+    const registrar = new registro(registerEmail,registerPassword,registerName,confirmPassword,registerPassword,Tabla);
+    i += 1;
     let V = registrar.actualizarDatos();
-    Tabla = registrar.guardarDatos(i,V)
+    Tabla = registrar.guardarDatos(i,V);
+    console.table(Tabla);
 });
-document.getElementById('boton').addEventListener('click',()=>{
+//ESTE CODIGO ES TEMPORAL
+document.getElementById('boton').addEventListener('click',(evento2)=>{
     const loginEmail = document.getElementById('loginEmail').value;
     const loginPassword = document.getElementById('loginPassword').value;
     const logear = new login(loginEmail,loginPassword);
-    for(let j = 0;j<i;j++){
-        
+    if(Tabla=[]){
+        alert("POR FAVOR REGISTRARSE");
+    }else{
+        for(let j = 0; j<3;j++){
+            let valor = Tabla[0][j];
+            let bolean1 = logear.seguridad1(valor);
+            let bolean2 = logear.seguridad2(valor);
+            if(bolean1 == true && bolean2 ==true){
+                window.location.href = "../catalogo.html"
+            }
+        }
     }
+    evento2.preventDefault();
 });

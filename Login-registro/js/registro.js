@@ -1,15 +1,13 @@
 import { login } from "./login.js";
 export class registro extends login{
     #Usuario;
-    #contraseña;
     #ConfirmarContraseña;
-    #direccion;
     #vectorBase;
-    constructor(direccion='',contraseña='',Usuario='',Ccontraseña='',vectorBase=[]){
+    constructor(direccion='',contraseña='',Usuario='',Ccontraseña='',vectorBase){
         super(direccion,contraseña);
         this.#Usuario = Usuario;
         this.#ConfirmarContraseña = Ccontraseña;
-        this.#vectorBase = vectorBase;
+        this.#vectorBase = Array.isArray(vectorBase) ? vectorBase : []; //ESTO ES PARA QUE SE VUELVA UN VECTOR
     }
 
     getUsuario(){
@@ -51,13 +49,14 @@ export class registro extends login{
     }
     guardarDatos(index,dato=[]){
         const indice = Number(index);
+        let Matriz = this.#vectorBase;
         //Aprovechemos Array.isArray
-        if(dato.length != 3){
+        if(dato.length != 3 || indice < 0){
             alert("❗❗❗No hay datos para guardar❗❗❗");
         }else{
-            alert("DATOS GUARDADOS")
+            alert("DATOS GUARDADOS");
+            Matriz.push(dato);
         }
-        this.#vectorBase = dato;
-        return this.#vectorBase;
+        return Matriz;
     }
 }
