@@ -61,24 +61,3 @@ export class registro extends login{
         return this.#vectorBase;
     }
 }
-//RECOMENDACION DE CHATGPT NO ABUSAR MUCHO DE LOS ALERTS 
-    /*
-    (CODIGO VIEJO)
-    actualizarDatos(){
-        let V = [];
-        if(this.#idUsuario !='' && this.#contraseña !='' && this.#direccion !='' && this.#contraseña!=this.#ConfirmarContraseña){
-            alert("Actualizado");
-            V.push(this.#idUsuario,this.#contraseña,this.#direccion);
-        }else{
-            alert("No se han hecho actualizaciones");
-        }
-        return V;
-    }
-    
-    guardarDatos(V=[],x=0){
-        if(V.length!=0){
-            this.#vectorBase[x]=V;
-        }
-        return this.#vectorBase;
-    }
-    */

@@ -19,18 +19,14 @@ export class login{
     }
     seguridad1(dato1){
         let valorB1 = false;
-        if(this.#DireccionCorreo!=dato1){
-            alert("El correo no existe")
-        }else{
+        if(this.#DireccionCorreo == dato1){
             valorB1 = true;
         }
         return valorB1;
     }
     seguridad2(dato2){
         let valorB2 = false;
-        if(this.#Contraseña!=dato2){
-            alert("La contraseña no existe")
-        }else{
+        if(this.#Contraseña = dato2){
             valorB2 = true;
         }
         return valorB2;

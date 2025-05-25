@@ -45,11 +45,6 @@ linkToLogin.addEventListener('click', (e) => {
 showSection('login');
 
 /*----------------------------------------(OSORNER)----------------------------------------------*/
-
-/*const registrar = new registro(usuario,contraseña,direccion,[]);
-
-let V = registrar.actualizarDatos();
-console.table(registrar.guardarDatos(V));*/
 let Tabla = [];
 let i = 0;
 document.getElementById('boton1').addEventListener('click',()=>{
@@ -66,6 +61,7 @@ document.getElementById('boton').addEventListener('click',()=>{
     const loginEmail = document.getElementById('loginEmail').value;
     const loginPassword = document.getElementById('loginPassword').value;
     const logear = new login(loginEmail,loginPassword);
-    
-    
+    for(let j = 0;j<i;j++){
+        
+    }
 });
