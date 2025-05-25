@@ -1,3 +1,4 @@
+import { login} from "./login.js";
 import { registro } from "./registro.js";
 
 /*-----------------------------------(IAS)---------------------------------------------------*/
@@ -49,11 +50,7 @@ showSection('login');
 
 let V = registrar.actualizarDatos();
 console.table(registrar.guardarDatos(V));*/
-
-document.getElementById('boton').addEventListener('click',()=>{
-    
-});
-
+let Tabla = [];
 let i = 0;
 document.getElementById('boton1').addEventListener('click',()=>{
     const registerName = document.getElementById('registerName').value;
@@ -63,5 +60,12 @@ document.getElementById('boton1').addEventListener('click',()=>{
     const registrar = new registro(registerEmail,registerPassword,registerName,confirmPassword,registerPassword,[]);
     i++;
     let V = registrar.actualizarDatos();
-    console.table(registrar.guardarDatos(i,V));
+    Tabla = registrar.guardarDatos(i,V)
+});
+document.getElementById('boton').addEventListener('click',()=>{
+    const loginEmail = document.getElementById('loginEmail').value;
+    const loginPassword = document.getElementById('loginPassword').value;
+    const logear = new login(loginEmail,loginPassword);
+    
+    
 });
