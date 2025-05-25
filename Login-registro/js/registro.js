@@ -1,5 +1,5 @@
-//ESTE CODIGO ES SOLO POR EL MOMENTO QUE NO TENEMOS LA BD
-export class registro{
+import { login } from "./login.js";
+export class registro extends login{
     #Usuario;
     #contraseña;
     #ConfirmarContraseña;
@@ -29,16 +29,14 @@ export class registro{
         //PASAMOS LOS DATOS A NUEVAS VARIABLES PARA QUE NO SE PIERDAN
         let Vect = [];
         const usuario = this.#Usuario.trim(); //PARA QUITAR LOS ESPACIOS
-        const contraseña = this.#contraseña;
+        const contraseña = this.getContraseña();
         const confirContraseña = this.#ConfirmarContraseña;
-        const dir = this.#direccion.trim();
+        const dir = this.getDireccion().trim();
 
         //Valores falsy: false, 0, 0n, '', null, undefined,NaN. si usuario = '', !usuario = true
         //De lo contrario se llama truthy
 
         if(!usuario || !dir){
-
-            //throw new error 
             alert("❗❗No se han ingresado los datos❗❗");
         }else{
             Vect.push(usuario,dir);
@@ -56,11 +54,8 @@ export class registro{
         //Aprovechemos Array.isArray
         if(dato.length != 3){
             alert("❗❗❗No hay datos para guardar❗❗❗");
-        }
-        //Para comparar si es un numero
-        if(indice < 0){
-            //Error por consola
-            throw new error ("indice invalido");
+        }else{
+            alert("DATOS GUARDADOS")
         }
         this.#vectorBase = dato;
         return this.#vectorBase;

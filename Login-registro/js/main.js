@@ -50,13 +50,17 @@ showSection('login');
 let V = registrar.actualizarDatos();
 console.table(registrar.guardarDatos(V));*/
 
+document.getElementById('boton').addEventListener('click',()=>{
+    
+});
+
 let i = 0;
 document.getElementById('boton1').addEventListener('click',()=>{
     const registerName = document.getElementById('registerName').value;
     const registerEmail = document.getElementById('registerEmail').value;
     const registerPassword = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    const registrar = new registro(registerName,confirmPassword,registerPassword,registerEmail,[]);
+    const registrar = new registro(registerEmail,registerPassword,registerName,confirmPassword,registerPassword,[]);
     i++;
     let V = registrar.actualizarDatos();
     console.table(registrar.guardarDatos(i,V));
