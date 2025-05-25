@@ -60,13 +60,14 @@ document.getElementById('boton1').addEventListener('click',(evento1)=>{
     Tabla = registrar.guardarDatos(i,V);
     console.table(Tabla);
 });
-//ESTE CODIGO ES TEMPORAL
+//ESTE CODIGO ES TEMPORAL (HAY QUE SOLUCIONAR PORQUE SE VACIA LA TABLA)
 document.getElementById('boton').addEventListener('click',(evento2)=>{
     const loginEmail = document.getElementById('loginEmail').value;
     const loginPassword = document.getElementById('loginPassword').value;
     const logear = new login(loginEmail,loginPassword);
     if(Tabla=[]){
         alert("POR FAVOR REGISTRARSE");
+        console.table(Tabla);
     }else{
         for(let j = 0; j<3;j++){
             let valor = Tabla[0][j];
