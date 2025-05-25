@@ -14,7 +14,7 @@ export class registro{
     }
     actualizarDatos(){
         //PASAMOS LOS DATOS A NUEVAS VARIABLES PARA QUE NO SE PIERDAN
-
+        let Vect = [];
         const usuario = this.#Usuario.trim(); //PARA QUITAR LOS ESPACIOS
         const contraseña = this.#contraseña;
         const confirContraseña = this.#ConfirmarContraseña;
@@ -26,20 +26,27 @@ export class registro{
         if(!usuario || !dir){
 
             //throw new error 
-            throw new error("Usuario y dirección deben ser no vacios");
+            alert("❗❗No se han ingresado los datos❗❗");
+        }else{
+            Vect.push(usuario,dir);
         }
         if(contraseña!=confirContraseña){
-            throw new error("Las contraseñas no coinciden")
+            alert("❗❗Las contraseñas no coinciden❗❗")
+        }else{
+            Vect.push(contraseña);
         }
 
-        return [id,contraseña,dir];
+        return Vect;
     }
-    guardarDatos(index,dato){
+    guardarDatos(index,dato=[]){
+        const indice = Number(index);
         //Aprovechemos Array.isArray
-        if(!Array.isArray(dato) || dato.length===0){
-            throw new error ("No hay datos para guardar");
+        if(dato.length != 3){
+            alert("❗❗❗No hay datos para guardar❗❗❗");
         }
-        if(typeof index !== 'number' || index < 0){
+        //Para comparar si es un numero
+        if(indice < 0){
+            //Error por consola
             throw new error ("indice invalido");
         }
         this.#vectorBase = dato;
