@@ -1,0 +1,138 @@
+/* Fuente y diseño general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Contenedor general */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+div {
+  max-width: 400px;
+  margin: 20px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2, h3 {
+  text-align: center;
+  color: #34495e;
+}
+
+/* Inputs */
+input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Botones */
+button {
+  width: 100%;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Productos */
+#listaProductos div {
+  background: #ecf0f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#listaProductos button {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.9em;
+}
+
+/* Carrito */
+#carritoLista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+#carritoLista li {
+  background: #dff9fb;
+  margin-bottom: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8em;
+  transition: background-color 0.3s;
+}
+
+#carritoLista button:hover {
+  background-color: #c0392b;
+}
+
+/* ======== RESPONSIVE ======== */
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  div {
+    max-width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5em;
+  }
+
+  input {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1.1em;
+    padding: 12px;
+  }
+
+  #listaProductos div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #listaProductos button {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
+
