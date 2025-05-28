@@ -1,0 +1,1219 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-pink: #FF007F; /* Main pink color from the image */
+    --accent-yellow: #F0F600; /* Bright yellow from the header line and footer */
+    --barranquero-blue: #00B1D2; /* Blue from the Barranquero logo in hero */
+    --barranquero-magenta: #FF007F; /* Magenta from the Barranquero logo in hero (same as primary pink) */
+    --barranquero-yellow: #FFD700; /* Yellow from the Barranquero logo in hero */
+
+    --light-bg-grey: #F8F8F8; /* Main light background color */
+    --dark-text: #333333;
+    --medium-text: #555555;
+    --light-text: #CCCCCC;
+
+    --header-bg: #FFFFFF;
+    --nav-bg: #F0F0F0;
+
+    --font-family-base: 'Montserrat', Arial, sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+}
+
+/* Basic Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg-grey);
+    overflow-x: hidden; /* Prevent horizontal scroll from infinite banner */
+}
+
+/* --- Utility Classes / Common Styles --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-text);
+}
+
+p {
+    font-weight: var(--font-weight-regular);
+}
+
+.cta-button, .email-cta-button {
+    background-color: var(--primary-pink);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-button:hover, .email-cta-button:hover {
+    background-color: #d1006a; /* Darker pink */
+}
+
+/* --- Top Yellow Line --- */
+.top-yellow-line {
+    width: 100%;
+    height: 8px;
+    background-color: var(--accent-yellow);
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+
+.header-main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left {
+    flex-shrink: 0;
+    /* On smaller screens, may need width: 100%; text-align: center; */
+}
+
+.logo img {
+    height: 60px; /* As seen in 1.jpg */
+    width: auto;
+    display: block;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    max-width: 500px; /* Wider search bar as requested */
+    border: 1px solid var(--light-grey-border); /* Define --light-grey-border if not already */
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
+}
+
+.search-bar input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    padding: 12px 20px;
+    outline: none;
+    font-size: 1em;
+    color: var(--medium-text);
+}
+
+.search-bar button {
+    background-color: #fff;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    color: var(--medium-text);
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.search-bar button:hover {
+    color: var(--primary-pink);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+.cta-button-header {
+    background-color: var(--primary-pink);
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-button-header:hover {
+    background-color: #d1006a;
+}
+
+.user-cart-icons {
+    display: flex;
+    flex-direction: column; /* Stack user and cart icons */
+    align-items: center;
+    gap: 5px; /* Smaller gap */
+    text-align: center;
+}
+
+.user-icon-container {
+    display: flex;
+    flex-direction: column; /* Stack icon and text if text was present */
+    align-items: center;
+    cursor: pointer;
+    color: var(--medium-text);
+    transition: color 0.3s;
+}
+
+.user-icon-container .fas {
+    font-size: 2.2em; /* Larger user icon */
+}
+
+.user-icon-container:hover {
+    color: var(--primary-pink);
+}
+
+.cart-icon-smaller {
+    font-size: 1.5em; /* Smaller cart icon */
+    color: var(--medium-text);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cart-icon-smaller:hover {
+    color: var(--primary-pink);
+}
+
+/* Main Navigation */
+.main-nav {
+    background-color: var(--nav-bg);
+    padding: 10px 0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav ul li {
+    margin: 0 20px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: var(--font-weight-semi-bold);
+    padding: 8px 0;
+    transition: color 0.3s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-pink);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.main-nav ul li a:hover {
+    color: var(--primary-pink);
+}
+
+/* --- Hero Section (Image 1.jpg) --- */
+.hero-section {
+    position: relative;
+    background-color: #F8F5F5; /* Light grey/pinkish background */
+    padding: 80px 0 0 0; /* Adjusted padding */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align content to bottom */
+    overflow: hidden;
+    min-height: 450px;
+    text-align: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%; /* Position relative to hero-section */
+    left: 15%; /* Adjust left position as per image */
+    transform: translateY(-50%); /* Vertically center */
+    z-index: 2;
+    text-align: left;
+    max-width: 400px;
+    color: var(--dark-text);
+}
+
+.hero-content p {
+    font-size: 1.8em;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.hero-content h1 {
+    font-size: 3.5em; /* Larger, bold text */
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-pink); /* "vuela alto" is pink */
+    line-height: 1.2;
+}
+
+.hero-products-illustration {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px; /* Adjust based on image scale */
+    text-align: center; /* For centering the image */
+    height: 100%; /* For badges positioning */
+}
+
+.hero-products-illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Keep illustration above background logo */
+}
+
+.hero-badge {
+    position: absolute;
+    background-color: var(--primary-pink);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: var(--font-weight-semi-bold);
+    white-space: nowrap;
+    z-index: 3; /* Above illustration */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: rotate(-5deg); /* Slight rotation */
+}
+
+/* Specific positioning for badges based on image 1.jpg */
+.hero-badge.haz-pedido {
+    top: 60%; /* Approximate position */
+    left: 45%;
+    transform: rotate(-5deg);
+}
+
+.hero-badge.boceto-gratuito {
+    top: 75%;
+    left: 55%;
+    transform: rotate(10deg);
+}
+/* For the "design-tshirt" icon, if it's a part of the image, no need for separate styling.
+   If it's an overlay, it would need its own precise positioning.
+   Assuming it's part of the `hero-products-illustration.png` for now. */
+
+.barranquero-logo-large {
+    position: absolute;
+    top: 50%;
+    right: -10%; /* Move slightly off to the right */
+    transform: translateY(-50%);
+    opacity: 0.1; /* Very subtle */
+    max-width: 700px; /* Large background logo */
+    height: auto;
+    z-index: 0;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.barranquero-logo-large img {
+    width: 100%;
+    height: auto;
+}
+
+/* --- Promotion Banner (Sticky top on scroll, image 2.jpg) --- */
+.promotion-banner {
+    background-color: var(--primary-pink);
+    color: #fff;
+    padding: 10px 0;
+    font-size: 1.1em;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative; /* Changed from sticky to relative for broader use, will implement sticky with JS if needed */
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* For sticky behavior on mobile, needs JS for true sticky element that comes into view */
+/* For responsive, will make this banner always visible at the top when scrolling */
+/* .sticky-top-mobile {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} */
+
+.promotion-content {
+    display: inline-block;
+    animation: scroll-promo 20s linear infinite; /* Adjust speed as needed */
+    padding-left: 100%; /* Start off-screen */
+}
+
+.promotion-content p {
+    display: inline-block;
+    margin: 0 30px;
+}
+
+.sale-tag {
+    background-color: #fff;
+    color: var(--primary-pink);
+    font-weight: var(--font-weight-bold);
+    padding: 5px 12px;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+@keyframes scroll-promo {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- Offer Section (Image 2.jpg) --- */
+.offer-section {
+    background-color: #F8F5F5; /* Matches hero background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.offer-content-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+    padding-right: 20px; /* Space from image */
+}
+
+.offer-content-left h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    color: var(--dark-text);
+}
+
+.kit-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.email-input-container {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the button */
+    align-items: center;
+    margin-top: 20px; /* Space from kit image */
+}
+
+.email-input-container img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%; /* Cover the area behind button */
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.email-cta-button {
+    position: relative;
+    background-color: var(--primary-pink);
+    color: #fff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1; /* Keep button above line */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Subtle shadow */
+}
+
+.offer-content-right {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.offer-content-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center image */
+}
+
+/* --- Welcome Section (Image 3.jpg) --- */
+.welcome-section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    background-image: url('path/to/pattern-background.png'); /* Pattern from image 3.jpg */
+    background-repeat: repeat;
+    background-size: 150px; /* Adjust pattern size */
+    background-position: center top;
+}
+
+.welcome-intro {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.welcome-intro h2 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--primary-pink); /* "Bienvenido a BARRANQUERO PRINTING" is pink */
+}
+
+.welcome-intro h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+.welcome-intro p {
+    font-size: 1.1em;
+    color: var(--medium-text);
+    max-width: 800px; /* Limit text width for readability */
+}
+
+.services-overview {
+    margin-top: 60px;
+}
+
+.services-overview h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-pink); /* "Nuestros Servicios" is pink */
+    text-align: left;
+}
+
+.service-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: flex-start; /* Align text and images top */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.service-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-description h3 {
+    font-size: 1.4em;
+    color: var(--primary-pink); /* Headings like Sublimación, DTF etc. are pink */
+    margin-bottom: 10px;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.service-description p {
+    font-size: 1em;
+    color: var(--medium-text);
+    margin-bottom: 20px;
+}
+
+.service-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of images */
+    gap: 15px;
+    min-width: 300px; /* Ensure images don't get too small */
+}
+
+.service-images img {
+    width: 100%;
+    height: 150px; /* Fixed height for image consistency */
+    object-fit: cover; /* Cover the area */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 3px solid var(--primary-pink); /* Pink border as in image */
+}
+
+/* --- Why Choose Us Section (Image 4.PNG) --- */
+.why-choose-us {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    background-image: url('path/to/pattern-background.png'); /* Same pattern as welcome */
+    background-repeat: repeat;
+    background-size: 150px;
+    background-position: center top;
+}
+
+.choose-us-category {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.choose-us-category h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: var(--primary-pink); /* "Por Qué Elegirnos?" is pink */
+}
+
+.choose-us-category h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.choose-us-category p {
+    font-size: 1.1em;
+    color: var(--medium-text);
+    margin-bottom: 15px;
+}
+
+/* --- Product Carousel (Image 5.PNG) --- */
+.product-carousel {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden; /* Hide overflowing items */
+}
+
+.carousel-arrow {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--primary-pink);
+}
+
+.carousel-items {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to items */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    gap: 30px; /* Space between carousel items */
+    padding: 20px 0; /* Add padding for visual spacing */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+}
+
+.carousel-items::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+}
+
+.carousel-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    scroll-snap-align: start; /* Snap to the start of each item */
+    width: 250px; /* Fixed width for carousel items, adjust as needed */
+    height: 250px; /* Fixed height for consistency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 5px solid var(--primary-pink); /* Pink border as in image */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Hide parts of image if it overflows */
+}
+
+.carousel-item img {
+    max-width: 90%; /* Smaller than 100% to show background */
+    max-height: 90%;
+    object-fit: contain; /* Ensure image fits */
+    display: block;
+}
+
+/* --- Footer (Image 6.PNG) --- */
+.footer {
+    background-color: var(--light-bg-grey); /* Matches page background */
+    padding-top: 50px; /* Padding above content */
+    font-size: 0.9em;
+    color: var(--medium-text);
+}
+
+.footer-top-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px; /* Padding bottom for social icons */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px; /* Space between main sections */
+    border-bottom: 1px solid #e0e0e0; /* Subtle line below social icons */
+}
+
+.footer-left {
+    flex: 2; /* Takes more space */
+    min-width: 300px;
+    text-align: left;
+}
+
+.footer-left .logo img {
+    height: 50px; /* Smaller logo in footer */
+    margin-bottom: 20px;
+}
+
+.footer-tagline {
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stats p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    font-weight: var(--font-weight-regular);
+}
+
+.stats p span {
+    font-size: 1.3em;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-pink);
+    margin-right: 5px;
+}
+
+.footer-columns-container {
+    flex: 3; /* Takes more space than left section combined */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-col {
+    min-width: 150px;
+}
+
+.footer-col h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--dark-text); /* Black headings */
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase; /* As seen in image */
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--medium-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-pink);
+}
+
+.footer-social {
+    max-width: 1200px;
+    margin: 20px auto 40px auto; /* Space from top line and bottom bar */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center; /* Centered as per image */
+    gap: 25px;
+}
+
+.footer-social a {
+    font-size: 1.8em;
+    color: var(--medium-text);
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: var(--primary-pink);
+}
+
+.footer-bottom-bar {
+    background-color: var(--accent-yellow); /* Yellow bar at bottom */
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 0.85em;
+    color: var(--dark-text);
+    font-weight: var(--font-weight-semi-bold); /* Text is bold in image */
+}
+
+/* --- Help Button (Image 6.PNG) --- */
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: var(--barranquero-blue); /* Blue color */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999; /* Always on top */
+    font-weight: var(--font-weight-semi-bold);
+    transition: background-color 0.3s;
+}
+
+.help-button:hover {
+    background-color: #0087a3; /* Darker blue */
+}
+
+.help-button .fas {
+    font-size: 1.2em;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .header-main-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-left, .header-center, .header-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-bar {
+        max-width: 500px;
+        margin: 15px auto;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cta-button-header {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .hero-content {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    .hero-content p {
+        font-size: 1.5em;
+    }
+
+    .hero-products-illustration {
+        max-width: 700px;
+    }
+
+    .hero-badge.haz-pedido {
+        top: 60%;
+        left: 25%;
+    }
+    .hero-badge.boceto-gratuito {
+        top: 75%;
+        left: 65%;
+    }
+
+
+    .barranquero-logo-large {
+        right: -20%; /* Keep it subtle but less off-screen */
+        max-width: 600px;
+    }
+
+    .offer-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .offer-content-left, .offer-content-right {
+        padding-right: 0;
+        max-width: 90%;
+    }
+
+    .email-input-container img {
+        width: 80%; /* Adjust pencil line width */
+        left: 10%;
+    }
+
+    .welcome-intro h2, .services-overview h2, .why-choose-us h2 {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .welcome-intro p {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto 20px auto;
+    }
+
+    .service-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .service-description, .service-images {
+        min-width: unset;
+        width: 90%;
+    }
+
+    .service-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .choose-us-category {
+        text-align: center;
+    }
+
+    .product-carousel {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .carousel-arrow {
+        position: static; /* Remove absolute positioning */
+        margin: 10px auto;
+    }
+
+    .carousel-items {
+        justify-content: flex-start; /* Ensure items start from left */
+    }
+
+    .footer-top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left {
+        text-align: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .footer-columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 0;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .search-bar input[type="text"] {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .cta-button-header {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .user-icon-container .fas {
+        font-size: 1.8em;
+    }
+
+    .cart-icon-smaller {
+        font-size: 1.3em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav ul li {
+        margin: 8px 0;
+    }
+
+    .promotion-banner {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .hero-section {
+        min-height: 350px;
+        padding-top: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .hero-products-illustration {
+        max-width: 500px;
+    }
+
+    .hero-badge.haz-pedido {
+        top: 55%;
+        left: 15%;
+        font-size: 0.8em;
+    }
+    .hero-badge.boceto-gratuito {
+        top: 70%;
+        left: 55%;
+        font-size: 0.8em;
+    }
+
+    .barranquero-logo-large {
+        display: none; /* Hide large decorative logo on smaller screens */
+    }
+
+    .offer-content-left h2 {
+        font-size: 1.8em;
+    }
+
+    .email-cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .welcome-intro h2, .services-overview h2, .why-choose-us h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .service-images {
+        grid-template-columns: 1fr; /* Stack service images */
+        gap: 10px;
+    }
+
+    .service-images img {
+        height: 120px;
+    }
+
+    .product-carousel {
+        padding: 0 10px;
+    }
+
+    .carousel-item {
+        width: 200px; /* Smaller items */
+        height: 200px;
+        border-width: 3px;
+    }
+
+    .footer-top-section {
+        padding: 30px 20px;
+    }
+
+    .footer-left {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .help-button {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-yellow-line {
+        height: 5px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .search-bar {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .search-bar input[type="text"] {
+        padding: 8px 12px;
+        font-size: 0.85em;
+    }
+
+    .cta-button-header {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .user-icon-container .fas {
+        font-size: 1.5em;
+    }
+
+    .cart-icon-smaller {
+        font-size: 1em;
+    }
+
+    .main-nav ul li {
+        margin: 5px 0;
+    }
+
+    .promotion-banner {
+        font-size: 0.85em;
+        padding: 6px 0;
+    }
+
+    .hero-section {
+        min-height: 280px;
+        padding-top: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .hero-products-illustration {
+        max-width: 350px;
+    }
+    .hero-badge {
+        padding: 6px 10px;
+        font-size: 0.7em;
+    }
+    .hero-badge.haz-pedido {
+        top: 50%;
+        left: 5%;
+    }
+    .hero-badge.boceto-gratuito {
+        top: 65%;
+        left: 45%;
+    }
+
+
+    .offer-content-left h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .email-cta-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .welcome-intro h2, .services-overview h2, .why-choose-us h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .welcome-intro h3 {
+        font-size: 1.5em;
+    }
+
+    .welcome-intro p, .choose-us-category p {
+        font-size: 0.95em;
+    }
+
+    .service-description h3 {
+        font-size: 1.2em;
+    }
+
+    .carousel-item {
+        width: 150px; /* Even smaller items */
+        height: 150px;
+    }
+
+    .footer-bottom-bar {
+        padding: 15px 10px;
+        font-size: 0.75em;
+    }
+
+    .help-button {
+        bottom: 5px;
+        left: 5px;
+        padding: 6px 10px;
+        font-size: 0.8em;
+        gap: 5px;
+    }
+}
