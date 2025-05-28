@@ -17,14 +17,14 @@ export class login{
     setContraseña(Contraseña){
         this.#Contraseña = Contraseña;
     }
-    seguridad1(dato1){
+    IniciarSesion(dato1){
         let valorB1 = false;
         if(this.#DireccionCorreo == dato1){
             valorB1 = true;
         }
         return valorB1;
     }
-    seguridad2(dato2){
+    CerrarSesion(dato2){
         let valorB2 = false;
         if(this.#Contraseña = dato2){
             valorB2 = true;
