@@ -1,7 +1,6 @@
-import { login} from "./login.js";
-import { registro } from "./registro.js";
-
 /*-----------------------------------(IAS)---------------------------------------------------*/
+
+import { Usuario } from "./Usuario.js";
 
 const authCard = document.getElementById('authCard');
 const loginSection = document.getElementById('loginSection');
@@ -45,38 +44,23 @@ linkToLogin.addEventListener('click', (e) => {
 showSection('login');
 
 /*----------------------------------------(OSORNER)----------------------------------------------*/
-let Tabla = [];
-let i = 0;
-//preventDefault es para evitar que la pagina se cargue cuando le damos al boton
-document.getElementById('boton1').addEventListener('click',(evento1)=>{
-    evento1.preventDefault();
+
+//Registro
+const usuarioR = new Usuario('','','','');
+
+let id = 1;
+
+document.getElementById('boton1').addEventListener('click',()=>{
+    id += 1;
     const registerName = document.getElementById('registerName').value;
     const registerEmail = document.getElementById('registerEmail').value;
     const registerPassword = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
-    const registrar = new registro(registerEmail,registerPassword,registerName,confirmPassword,registerPassword,Tabla);
-    i += 1;
-    let V = registrar.actualizarDatos();
-    Tabla = registrar.guardarDatos(i,V);
-    console.table(Tabla);
+    usuarioR.setId(id);
+    usuarioR.setNombre(registerName);
+    usuarioR.setCorreo(registerEmail);
+    usuarioR.setContraseña(registerPassword);
+    usuarioR.Registrarse(usuarioR.getNombre(),usuarioR.getCorreo(),usuarioR.getContraseña(),confirmPassword);
 });
-//ESTE CODIGO ES TEMPORAL (HAY QUE SOLUCIONAR PORQUE SE VACIA LA TABLA)
-document.getElementById('boton').addEventListener('click',(evento2)=>{
-    const loginEmail = document.getElementById('loginEmail').value;
-    const loginPassword = document.getElementById('loginPassword').value;
-    const logear = new login(loginEmail,loginPassword);
-    if(Tabla=[]){
-        alert("POR FAVOR REGISTRARSE");
-        console.table(Tabla);
-    }else{
-        for(let j = 0; j<3;j++){
-            let valor = Tabla[0][j];
-            let bolean1 = logear.seguridad1(valor);
-            let bolean2 = logear.seguridad2(valor);
-            if(bolean1 == true && bolean2 ==true){
-                window.location.href = "../catalogo.html"
-            }
-        }
-    }
-    evento2.preventDefault();
-});
+
+/*----------------------------------------(OSORNER)----------------------------------------------*/
