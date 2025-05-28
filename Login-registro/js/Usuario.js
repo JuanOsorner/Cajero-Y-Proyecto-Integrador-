@@ -41,7 +41,7 @@ export class Usuario{
     Registrarse(Nombre,Correo,Contraseña,ConfirmarC){
         let V = [];
         if(Contraseña==ConfirmarC){
-            console.log(SimularBd.insertDatos(V.push(Nombre,Correo,Contraseña)));
+            console.table(SimularBd.insertDatos(V.push(Nombre,Correo,Contraseña)));
         }else{
             alert("Las contraseñas no coinciden");
         }
