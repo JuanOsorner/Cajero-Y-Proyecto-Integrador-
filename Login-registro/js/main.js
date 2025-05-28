@@ -50,7 +50,7 @@ const usuarioR = new Usuario('','','','');
 
 let id = 1;
 
-document.getElementById('boton1').addEventListener('click',()=>{
+document.getElementById('boton1').addEventListener('click',(e)=>{
     id += 1;
     const registerName = document.getElementById('registerName').value;
     const registerEmail = document.getElementById('registerEmail').value;
@@ -61,6 +61,7 @@ document.getElementById('boton1').addEventListener('click',()=>{
     usuarioR.setCorreo(registerEmail);
     usuarioR.setContraseña(registerPassword);
     usuarioR.Registrarse(usuarioR.getNombre(),usuarioR.getCorreo(),usuarioR.getContraseña(),confirmPassword);
+    e.preventDefault();
 });
 
 /*----------------------------------------(OSORNER)----------------------------------------------*/

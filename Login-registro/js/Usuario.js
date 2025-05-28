@@ -35,13 +35,14 @@ export class Usuario{
         this.#contraseña = Contraseña;
     }
     IniciarSesion(correo, contraseña){
-        
+        //FALTA ESTE METODO 
     }
     //Usaremos el operador ...
     Registrarse(Nombre,Correo,Contraseña,ConfirmarC){
         let V = [];
         if(Contraseña==ConfirmarC){
-            console.table(SimularBd.insertDatos(V.push(Nombre,Correo,Contraseña)));
+            V.push(Nombre,Correo,Contraseña)
+            console.table(SimularBd.insertDatos(V));
         }else{
             alert("Las contraseñas no coinciden");
         }
