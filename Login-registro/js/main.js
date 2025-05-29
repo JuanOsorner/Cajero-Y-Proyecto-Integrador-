@@ -48,20 +48,35 @@ showSection('login');
 //Registro
 const usuarioR = new Usuario('','','','');
 
-let id = 1;
+//PARA QUE SE CARGUEN TODOS LOS CONTROLADORES DOMContet...
+document.addEventListener('DOMContentLoaded',()=>{
+    const boton = document.getElementById('boton');
+    boton.addEventListener('click',(ev)=>{
+        ev.preventDefault();
+        const loginEmail = document.getElementById('loginEmail').value;
+        const loginPassword = document.getElementById('loginPassword').value;
+        if(usuarioR.IniciarSesion(loginEmail,loginPassword)==true){
+            window.location.href="./catalogo.html"
+        }
+    });
+});
 
-document.getElementById('boton1').addEventListener('click',(e)=>{
-    id += 1;
-    const registerName = document.getElementById('registerName').value;
-    const registerEmail = document.getElementById('registerEmail').value;
-    const registerPassword = document.getElementById('registerPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-    usuarioR.setId(id);
-    usuarioR.setNombre(registerName);
-    usuarioR.setCorreo(registerEmail);
-    usuarioR.setContraseña(registerPassword);
-    usuarioR.Registrarse(usuarioR.getNombre(),usuarioR.getCorreo(),usuarioR.getContraseña(),confirmPassword);
-    e.preventDefault();
+let id = 0;
+document.addEventListener('DOMContentLoaded',()=>{
+    const boton1 = document.getElementById('boton1');
+    boton1.addEventListener('click',(e)=>{
+        id+=1;
+        const registerName = document.getElementById('registerName').value;
+        const registerEmail = document.getElementById('registerEmail').value;
+        const registerPassword = document.getElementById('registerPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        usuarioR.setId(id);
+        usuarioR.setNombre(registerName);
+        usuarioR.setCorreo(registerEmail);
+        usuarioR.setContraseña(registerPassword);
+        usuarioR.Registrarse(usuarioR.getNombre(),usuarioR.getCorreo(),usuarioR.getContraseña(),confirmPassword);
+        e.preventDefault();
+    });
 });
 
 /*----------------------------------------(OSORNER)----------------------------------------------*/

@@ -35,7 +35,8 @@ export class Usuario{
         this.#contraseña = Contraseña;
     }
     IniciarSesion(correo, contraseña){
-        //FALTA ESTE METODO 
+        let valor1 = SimularBd.compararDatos(correo,contraseña);
+        return valor1; 
     }
     //Usaremos el operador ...
     Registrarse(Nombre,Correo,Contraseña,ConfirmarC){
