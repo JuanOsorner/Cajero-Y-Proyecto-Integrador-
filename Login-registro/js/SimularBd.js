@@ -14,13 +14,12 @@ export class SimularBd{
         }
         return this.V;
     }
-    //Usamos includes
     static compararDatos(Dato1,Dato2){
-        let U = [];
-        U.push(Dato1);
-        U.push(Dato2);
+        let U = [Dato1,Dato2];
+        //Esta parte del texto se explica abajo en (*)
+        const vectorStr = JSON.stringify(U);
         let valor = false;
-        if(this.V.some(fila => JSON.stringify(fila) === U)){
+        if(this.V.some(fila => JSON.stringify(fila)===vectorStr)){
             valor = true;
         }else{
             alert("Usuario o contraseña incorrectos")
@@ -29,3 +28,10 @@ export class SimularBd{
     }
 }
 //Debemos encontrar una manera de crear una tabla continua
+/*
+(*) JSON (JavaScript Object Notation) es un formato de texto ligero y fácil de leer para almacenar e 
+intercambiar datos estructurados. Aunque su sintaxis se basa en JavaScript, es independiente del lenguaje 
+y ampliamente compatible con muchos otros, como Python, Java, PHP y más
+
+JSON.stringify() sirve para convertir un objeto en una cadenas JSON
+*/
