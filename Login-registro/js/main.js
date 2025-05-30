@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         const loginEmail = document.getElementById('loginEmail').value;
         const loginPassword = document.getElementById('loginPassword').value;
         if(usuarioR.IniciarSesion(loginEmail,loginPassword)==true){
+            //Hay que buscar un metodo para que no se cargue la pagina
             window.location.href="./catalogo.html"
         }else{
             alert("Usuario no encontrado");

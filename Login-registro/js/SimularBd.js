@@ -14,6 +14,7 @@ export class SimularBd{
         }
         return this.V;
     }
+    //Muchas veces es mejor volver a los origenes
     static compararDatos(Dato1,Dato2){
         let valor = false;
         for(let i = 0; i<this.V.length;i++){
@@ -26,10 +27,3 @@ export class SimularBd{
     }
 }
 //Debemos encontrar una manera de crear una tabla continua
-/*
-(*) JSON (JavaScript Object Notation) es un formato de texto ligero y fácil de leer para almacenar e 
-intercambiar datos estructurados. Aunque su sintaxis se basa en JavaScript, es independiente del lenguaje 
-y ampliamente compatible con muchos otros, como Python, Java, PHP y más
-
-JSON.stringify() sirve para convertir un objeto en una cadenas JSON
-*/
