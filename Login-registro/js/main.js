@@ -52,12 +52,14 @@ const usuarioR = new Usuario('','','','');
 document.addEventListener('DOMContentLoaded',()=>{
     const boton = document.getElementById('boton');
     boton.addEventListener('click',(ev)=>{
-        ev.preventDefault();
         const loginEmail = document.getElementById('loginEmail').value;
         const loginPassword = document.getElementById('loginPassword').value;
         if(usuarioR.IniciarSesion(loginEmail,loginPassword)==true){
             window.location.href="./catalogo.html"
+        }else{
+            alert("Usuario no encontrado");
         }
+        ev.preventDefault();
     });
 });
 

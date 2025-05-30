@@ -15,14 +15,12 @@ export class SimularBd{
         return this.V;
     }
     static compararDatos(Dato1,Dato2){
-        let U = [Dato1,Dato2];
-        //Esta parte del texto se explica abajo en (*)
-        const vectorStr = JSON.stringify(U);
         let valor = false;
-        if(this.V.some(fila => JSON.stringify(fila)===vectorStr)){
-            valor = true;
-        }else{
-            alert("Usuario o contraseña incorrectos")
+        for(let i = 0; i<this.V.length;i++){
+            if(this.V[i][1]===Dato1 && this.V[i][2]===Dato2){
+                valor = true;
+                break;
+            }
         }
         return valor;
     }
