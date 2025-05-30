@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión / Registrarse - Barranquero Printing</title>
+    <link rel="stylesheet" href="./css/login-registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo-placeholder">
+                <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="logo">
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos, categorías, diseños...">
+                <button type="submit"><img src="search-icon.png" alt="Buscar"></button>
+            </div>
+            <nav class="top-nav">
+                <a href="#" class="profile-icon"><img src="profile-icon.png" alt="Perfil"></a>
+                <a href="#" class="cart-icon"><img src="cart-icon.png" alt="Carrito"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="login-register-card login-active" id="authCard">
+            <div class="toggle-buttons">
+                <button class="toggle-btn active" id="showLogin">Iniciar Sesión</button>
+                <button class="toggle-btn" id="showRegister">Registrarse</button>
+            </div>
+
+            <div class="auth-section" id="loginSection">
+                <h2>Iniciar sesión</h2>
+                <p class="not-member">¿Aún no eres miembro? <a href="#" id="linkToRegister">Registra una cuenta gratuita</a></p>
+
+                <div class="social-login">
+                    <button class="social-button facebook">
+                        <img src="./img/logoFacebook.png" alt="Facebook"> Iniciar sesión con Facebook
+                    </button>
+                    <button class="social-button google">
+                        <img src="./img/logoGoogle.png" alt="Google"> Iniciar sesión con Google
+                    </button>
+                </div>
+
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Dirección de correo electrónico *</label>
+                        <input type="email" id="loginEmail" placeholder="Dirección de correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña *</label>
+                        <input type="password" id="loginPassword" placeholder="Contraseña">
+                    </div>
+                    <button type="submit" class="submit-button" id="boton">Iniciar sesión</button>
+                </form>
+
+                <p class="terms-privacy">
+                    Este sitio está protegido con reCAPTCHA y se aplican la <a href="#">Política de privacidad</a> y los <a href="#">Términos de servicio</a> de Google.
+                </p>
+            </div>
+
+            <div class="auth-section" id="registerSection">
+                <h2>Registrarse</h2>
+                <p class="not-member">¿Ya tienes una cuenta? <a href="#" id="linkToLogin">Iniciar sesión</a></p>
+
+                <form class="register-form">
+                    <div class="form-group">
+                        <label for="registerName">Nombre de usuario *</label>
+                        <input type="text" id="registerName" placeholder="Tu nombre de usuario">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Dirección de correo electrónico *</label>
+                        <input type="email" id="registerEmail" placeholder="Tu correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Contraseña *</label>
+                        <input type="password" id="registerPassword" placeholder="Crea tu contraseña">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar Contraseña *</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirma tu contraseña">
+                    </div>
+                    <button type="submit" class="submit-button" id="boton1">Registrarse</button>
+                </form>
+
+                <p class="terms-privacy">
+                    Al registrarte, aceptas nuestra <a href="#">Política de privacidad</a> y <a href="#">Términos de servicio</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col logo-footer-col">
+                <div class="logo-placeholder-footer">
+                    <img src="your-logo.png" alt="Barranquero Printing Logo Footer" class="logo">
+                </div>
+                <p>Crea, crea e imagínate con infinitas posibilidades de diseño en BARRANQUERO PRINTING.</p>
+                <p>5.056.251 Productos   5.392,89% Clientes   9.254 Tiendas</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navegación</h3>
+                <ul>
+                    <li><a href="#">Empresa certificada</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Política de calidad</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+                <div class="social-icons-footer">
+                    <a href="#"><img src="facebook-icon-footer.png" alt="Facebook"></a>
+                    <a href="#"><img src="instagram-icon-footer.png" alt="Instagram"></a>
+                    <a href="#"><img src="twitter-icon-footer.png" alt="Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Recursos</h3>
+                <ul>
+                    <li><a href="#">Empresa certificada</a></li>
+                    <li><a href="#">Política de cookies</a></li>
+                    <li><a href="#">Política de calidad</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Promociones</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Páginas</h3>
+                <ul>
+                    <li><a href="#">Crear una tienda</a></li>
+                    <li><a href="#">Afiliados</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Acceso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2024 - 2025 ® Todos los derechos reservados. BARRANQUERO PRINTING, Santa Elena, Málaga B. P. 66, Málaga, - Andalucía, España. Inscrita en el Registro Mercantil de Málaga, Tomo 3416, Libro 2331, Folio 154, Hoja MA-66779, Inscripción 1ª, C.I.F.: B-92473484</p>
+            <div class="help-center">
+                <img src="help-icon.png" alt="Centro de ayuda">
+                <span>Centro de ayuda</span>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/registro.js"></script>
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>

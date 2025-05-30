@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="stylesheet" href="./css/Origen.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero Electrónico</title>
+</head>
+<body>
+
+<div id="caja1" style="display: flex;">
+    <div class="atm">
+      <div class="screen">
+        <h1 class="title">MISTERBANK</h1>
+        <p class="subtitle">Bienvenido</p>
+        <div class="menu">
+          <div class="form-group">
+            <label for="usuario">Usuario<hr></label>
+            <input type="text" id="usuario" placeholder="Ingrese su usuario"/><br><br>
+          </div>
+          <div class="form-group">
+            <label for="contraseña1">Contraseña<hr></label>
+            <input type="text" id="contraseña1" placeholder="Ingrese su contraseña"/><br><br>
+          </div>
+          <div class="form-group">
+            <label for="TipoCuenta">Tipo de cuenta<hr></label>
+            <select name="TipoCuenta" id="TipoCuenta">
+              <option value="1">Ahorros</option>
+              <option value="2">Corriente</option>
+            </select>
+          </div>
+          <button id="btn-entrar">Entrar</button>
+          <label for="">¿Tienes cuenta?</label>
+          <button id="btn-registro">Registrate</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="keypad">
+          <button id="btn-1">1</button>
+          <button id="btn-2">2</button>
+          <button id="btn-3">3</button>
+          <button id="btn-4">4</button>
+          <button id="btn-5">5</button>
+          <button id="btn-6">6</button>
+          <button id="btn-7">7</button>
+          <button id="btn-8">8</button>
+          <button id="btn-9">9</button>
+          <button id="btn-star">*</button>
+          <button id="btn-0">0</button>
+          <button id="btn-pound">#</button>
+        </div>
+        <div class="card-container">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+        </div>
+        <div class="func-buttons">
+          <button id="btn-red"></button>
+          <button id="btn-yellow"></button>
+          <button id="btn-green"></button>
+          <button id="btn-white"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="caja2" style="display: none;">
+      <div class="atm">
+        <div class="screen">
+          <h1 class="title">Cajero Electrónico</h1>
+          <p class="subtitle">Bienvenido a tu cuenta ahorros</p>
+        <div class="menu">
+          <button id="btn-consignar-cliente">Cliente</button>
+          <button id="btn-retirar">Retirar</button>
+          <dialog id="dlg-0">
+            <h1>Retirar</h1><br>
+            <input type="text" name="" id="retirar" placeholder="Ingrese el dinero a retirar"><br><hr>
+            <button id="Bretirar">Finalizar retiro</button>
+          </dialog>
+          <button id="btn-consignar">Consignar</button>
+          <dialog id="dlg-00">
+            <h1>Depositar</h1><br>
+            <input type="text" name="" id="consignarDinero" placeholder="Ingrese el dinero a depositar"><br><hr>
+            <button id="Bconsignar">Finalizar consignación</button>
+          </dialog>
+          <button id="btn-transferencia">Transferir</button>
+          <dialog id="dlg-000">
+            <h1>Transferir</h1><br>
+            <input type="text" name="" id="transferirDinero" placeholder="Ingrese el dinero a transferir"><br><hr>
+            <input type="text" name="" id="Destino" placeholder="Ingrese destino"><br><hr>
+            <button id="Btransferir">Finalizar consignación</button>
+          </dialog>
+          <button id="btn-top-consultar">Consultar Saldo</button>
+          <!--NO SE MUESTRA A PRIORI-->
+          <dialog id="dlg">
+            <p id="saldoU"></p>
+            <button id="cerrar-dlg">Cerrar</button>
+          </dialog>
+          <button id="btn-top-movimientos" class="boton">Consultar Movimientos</button>
+          <dialog id="dlg1">
+              <table id="tabla1">
+
+              </table>
+              <button id="cerrar-dlg1">Cerrar</button>
+          </dialog>
+          <button id="btn-cerrar-sesion">Cerrar Sesión</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="keypad">
+          <button id="btn-1">1</button>
+          <button id="btn-2">2</button>
+          <button id="btn-3">3</button>
+          <button id="btn-4">4</button>
+          <button id="btn-5">5</button>
+          <button id="btn-6">6</button>
+          <button id="btn-7">7</button>
+          <button id="btn-8">8</button>
+          <button id="btn-9">9</button>
+          <button id="btn-star">*</button>
+          <button id="btn-0">0</button>
+          <button id="btn-pound">#</button>
+        </div>
+        <div class="card-container">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+        </div>
+        <div class="func-buttons">
+          <button id="btn-red"></button>
+          <button id="btn-yellow"></button>
+          <button id="btn-green"></button>
+          <button id="btn-white"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="caja3" style="display: none;">
+      <div class="atm">
+        <div class="screen">
+          <h1 class="title">Cajero Electrónico</h1>
+          <p class="subtitle">Bienvenido a tu cuenta corriente</p>
+        <div class="menu">
+          <button id="btn-consignar-cliente-1">Cliente</button>
+          <button id="btn-retirar">Retirar</button>
+          <button id="btn-consignar">Consignar</button>
+          <button id="btn-top-consultar-1">Consultar Saldo</button>
+          <!--NO SE MUESTRA A PRIORI-->
+          <dialog id="dlg-1">
+            <p id="saldoU-1"></p>
+            <button id="cerrar-dlg-1">Cerrar</button>
+          </dialog>
+          <button id="btn-top-registrar-1">Registrar Movimiento</button>
+          <button id="btn-top-movimientos-1" class="boton">Consultar Movimientos</button>
+          <dialog id="dlg1-1">
+              <table id="tabla1-1">
+
+              </table>
+              <button id="cerrar-dlg1-1">Cerrar</button>
+          </dialog>
+          <button id="btn-cerrar-sesion-1">Cerrar Sesión</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="keypad">
+          <button id="btn-1">1</button>
+          <button id="btn-2">2</button>
+          <button id="btn-3">3</button>
+          <button id="btn-4">4</button>
+          <button id="btn-5">5</button>
+          <button id="btn-6">6</button>
+          <button id="btn-7">7</button>
+          <button id="btn-8">8</button>
+          <button id="btn-9">9</button>
+          <button id="btn-star">*</button>
+          <button id="btn-0">0</button>
+          <button id="btn-pound">#</button>
+        </div>
+        <div class="card-container">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+        </div>
+        <div class="func-buttons">
+          <button id="btn-red"></button>
+          <button id="btn-yellow"></button>
+          <button id="btn-green"></button>
+          <button id="btn-white"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="caja4" style="display: none;">
+    <div class="atm">
+      <div class="screen">
+        <h1 class="title">Datos del cliente</h1>
+        <p class="subtitle">Sus datos</p>
+        <div class="menu">
+          <div class="form-group">
+            <label for="nombre">Nombre:<p id="Cnombre"></p><hr></label>
+            <input type="text" id="nombre" placeholder="Ingrese nuevo nombre"/><br><br>
+            <button id="actualizar1">Actualizar</button>
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos: <p id="Capellidos"></p><hr></label>
+            <input type="text" id="apellidos" placeholder="Ingrese nuevo apellido"/><br><br>
+            <button id="actualizar2">Actualizar</button>
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección: <p id="Cdireccion"></p><hr></label>
+            <input type="text" id="direccion" placeholder="Ingrese nueva direccion"/><br><br>
+            <button id="actualizar3">Actualizar</button>
+          </div>
+          <div class="form-group">
+            <label for="identificacion">Identificación: <p id="Cidentificacion"></p><hr></label>
+            <input type="text" id="identificacion" placeholder="Ingrese nueva identificacion"/><br><br>
+            <button id="actualizar4">Actualizar</button>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado de cuenta: <p id="Cestado"></p><hr></label><br>
+            <!-- Sin input debajo -->
+          </div>
+          <!-- Botón al final -->
+          <button id="btn-generar-cuenta">Generar número de cuenta</button>
+          <dialog id="dlg2">
+              <p id="numeroCuenta"></p>
+              <button id="cerrar-dlg2">Volver</button>
+          </dialog>
+          <button id="volver1">Volver</button>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="keypad">
+          <button id="btn-1">1</button>
+          <button id="btn-2">2</button>
+          <button id="btn-3">3</button>
+          <button id="btn-4">4</button>
+          <button id="btn-5">5</button>
+          <button id="btn-6">6</button>
+          <button id="btn-7">7</button>
+          <button id="btn-8">8</button>
+          <button id="btn-9">9</button>
+          <button id="btn-star">*</button>
+          <button id="btn-0">0</button>
+          <button id="btn-pound">#</button>
+        </div>
+        <div class="card-container">
+          <div class="card-slot"></div>
+          <div class="card-slot"></div>
+        </div>
+        <div class="func-buttons">
+          <button id="btn-red"></button>
+          <button id="btn-yellow"></button>
+          <button id="btn-green"></button>
+          <button id="btn-white"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/Cuenta.js"></script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/Cliente.js"></script>
+  <script type="module" src="js/CuentaAhorros.js"></script>
+  <script type="module" src="js/CuentaCorriente.js"></script>
+</body>
+</html>
