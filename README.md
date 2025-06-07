@@ -132,7 +132,7 @@ Test the connection:
 
 # Extra 😎
 
-1. ⏪⏩git revert and git reset
+## 1. ⏪⏩git revert and git reset
 
 🔁 git reset
 
@@ -165,7 +165,7 @@ Start over from history (dangerous!):
 
 Warning: --hard can permanently delete work — avoid if unsure
 
-🔄 git revert
+## 2. 🔄 git revert
 
 What it does:
 
