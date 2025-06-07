@@ -1,6 +1,6 @@
-#Git & GitHub — Quick Reference 🚀
+# Git & GitHub — Quick Reference 🚀
 
-##1. 📥 Download and Prepare the Project
+## 1. 📥 Download and Prepare the Project
 
 Visit GitHub and download the repository as a .zip.
 
@@ -10,7 +10,7 @@ Open the project folder using Git Bash and run:
 
     git init
 
-##2. 🛠️ Initial Configuration
+## 2. 🛠️ Initial Configuration
 
 Set your global identity:
 
@@ -27,7 +27,7 @@ macOS/Linux:
 
     git config --global core.autocrlf input
 
-##3. 🌐 Connect to the Remote Repository
+## 3. 🌐 Connect to the Remote Repository
 
 Copy the HTTPS URL of the remote repo.
 
@@ -36,9 +36,9 @@ Add it as the origin:
     git remote add origin <HTTPS-URL-HERE>
     git remote -v  # Verify the remote settings
 
-##4. 🧠 Working with Branches
+## 4. 🧠 Working with Branches
 
-###4.1 View and Switch Branches
+### 4.1 View and Switch Branches
 
     git branch           # List local branches
     git checkout <branch> # Switch to an existing branch
@@ -47,19 +47,19 @@ If git checkout fails, try: (☢️This is the branch dosent exist☢️)
 
     git fetch origin NAME OF BRANCH
 
-###4.2 Create a Branch and Push It
+### 4.2 Create a Branch and Push It
 
     git checkout -b <new-branch>
     git push origin <new-branch>
 
-###4.3 Merge a Branch into main
+### 4.3 Merge a Branch into main
 
 From the main branch:
 
     git merge origin/<your-branch>
     git push origin main
 
-###4.4 Delete a Remote Branch
+### 4.4 Delete a Remote Branch
 
     git push origin --delete <branch>
 
@@ -110,7 +110,7 @@ To get updates from others into main:
     git merge origin/main
 
 
-##6. 🔒 Optional: SSH Setup for Secure Access (☢️This is your working in your own PC☢️)
+## 6. 🔒 Optional: SSH Setup for Secure Access (☢️This is your working in your own PC☢️)
 Generate your SSH key:
 
     ssh-keygen -t ed25519 -C "youremail@example.com"
@@ -130,7 +130,7 @@ Test the connection:
 
     ssh -T git@github.com
 
-#🛡️ Common Error & Fix
+# 🛡️ Common Error & Fix
 Error:
 
     fatal: refusing to merge unrelated histories
