@@ -130,6 +130,60 @@ Test the connection:
 
     ssh -T git@github.com
 
+# Extra 😎
+
+1. ⏪⏩git revert and git reset
+
+🔁 git reset
+
+What it does:
+
+Moves the current branch pointer (HEAD) back to a chosen commit.
+
+Ideal for rewriting local history on branches that haven't been shared.
+
+Modes:
+--soft: keep changes staged, HEAD moves only.
+
+--mixed (default): unstages changes; working directory remains intact.
+
+--hard: discards all changes up to that commit, including your working directory
+
+Use cases:
+
+Undo local commits: e.g. remove your last two commits:
+
+    git reset --mixed HEAD~2
+
+Unstage files:
+
+    git reset HEAD <file>
+
+Start over from history (dangerous!):
+
+    git reset --hard HEAD~1
+
+Warning: --hard can permanently delete work — avoid if unsure
+
+🔄 git revert
+
+What it does:
+
+Does not change history or remove commits.
+
+Creates a new commit that undoes a previous one 
+
+Use cases:
+Safely undo changes on public/shared branches:
+
+    git revert <commit-hash>
+
+Revert without editing message:
+
+    git revert --no-edit <commit-hash>
+
+This adds a reverse commit to preserve the history while removing the effects of a past commit.
+
 # 🛡️ Common Error & Fix
 Error:
 
