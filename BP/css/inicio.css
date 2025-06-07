@@ -270,7 +270,7 @@ p {
 
 .hero-content {
     position: absolute;
-    top: 50%; /* Position relative to hero-section */
+    top: 15%; /* Position relative to hero-section */
     left: 15%; /* Adjust left position as per image */
     transform: translateY(-50%); /* Vertically center */
     z-index: 2;
@@ -298,18 +298,20 @@ p {
     z-index: 1;
     width: 100%;
     max-width: 900px; /* Adjust based on image scale */
-    text-align: center; /* For centering the image */
+    /* Removed text-align:center to stop centering */
     height: 100%; /* For badges positioning */
 }
 
 .hero-products-illustration img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1; /* Keep illustration above background logo */
+max-width: 100%;
+height: auto;
+display: block;
+margin-left: -310px; /* Ajusta este valor */
+position: relative;
+z-index: 1;
 }
+
+
 
 .hero-badge {
     position: absolute;
@@ -338,15 +340,15 @@ p {
     transform: rotate(10deg);
 }
 /* For the "design-tshirt" icon, if it's a part of the image, no need for separate styling.
-   If it's an overlay, it would need its own precise positioning.
+If it's an overlay, it would need its own precise positioning.
    Assuming it's part of the `hero-products-illustration.png` for now. */
 
 .barranquero-logo-large {
     position: absolute;
-    top: 50%;
-    right: -10%; /* Move slightly off to the right */
+    top: 52%;
+    right: 0%; /* Move slightly off to the right */
     transform: translateY(-50%);
-    opacity: 0.1; /* Very subtle */
+    opacity: 0.8; /* Very subtle */
     max-width: 700px; /* Large background logo */
     height: auto;
     z-index: 0;
@@ -407,61 +409,72 @@ p {
 }
 
 /* --- Offer Section (Image 2.jpg) --- */
+/* --- Offer Section (Ajustes para parecerse a la imagen de referencia) --- */
 .offer-section {
-    background-color: #F8F5F5; /* Matches hero background */
+    background-color: #F8F5F5; /* Fondo claro como en la imagen */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Allow wrapping */
+    /* justify-content: space-between; */ /* Cambiamos a space-between para distribuir los elementos */
+    justify-content: center; /* Mantengo center por ahora, si no se ve bien, cambia a space-between */
+    align-items: center; /* Centra el contenido verticalmente */
+    padding: 50px 20px; /* Padding alrededor de la sección */
+    gap: 60px; /* Reducimos el espacio general para que quepan 3 secciones lógicamente, ajusta si es necesario */
+    max-width: 1200px; /* Mantiene la sección contenida */
+    margin: 0 auto; /* Centra la sección en la página */
+    flex-wrap: wrap; /* Permite que las columnas se apilen en pantallas más pequeñas */
 }
 
 .offer-content-left {
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
+    /* flex: 1; */ /* Quita el flex:1 para que ocupe el ancho necesario sin expandirse demasiado */
+    min-width: 300px; /* Asegura un ancho mínimo para el texto y las imágenes del kit */
+    max-width: 400px; /* Limita el ancho máximo para el texto */
     text-align: left;
-    padding-right: 20px; /* Space from image */
+    /* padding-right: 0; */
 }
 
 .offer-content-left h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
+    font-size: 1.8em; /* Hacemos el texto un poco más pequeño, como solicitaste */
+    margin-bottom: 25px; /* Ajusta el espacio debajo del título */
     line-height: 1.3;
     color: var(--dark-text);
 }
 
+.kit-image {
+    margin-bottom: 25px; /* Espacio debajo de la imagen del kit */
+    display: flex;
+    justify-content: center; /* Centra la imagen del kit horizontalmente */
+}
+
 .kit-image img {
-    max-width: 100%;
+    max-width: 100%; /* Asegura que la imagen no se desborde */
     height: auto;
     display: block;
-    margin-bottom: 30px;
 }
 
 .email-input-container {
-    position: relative;
+    position: relative; /* Crucial para posicionar el lápiz y la línea de forma absoluta respecto a este contenedor */
     display: flex;
-    justify-content: center; /* Center the button */
-    align-items: center;
-    margin-top: 20px; /* Space from kit image */
+    justify-content: center; /* Centra el botón horizontalmente */
+    align-items: center; /* Alinea los items verticalmente */
+    margin-top: 20px;
+    min-height: 80px; /* Suficiente altura para contener el lápiz y la línea */
+    width: fit-content; /* El contenedor se ajusta al contenido para el centrado */
+    margin-left: auto; /* Centra el contenedor del botón/lápiz */
+    margin-right: auto; /* Centra el contenedor del botón/lápiz */
 }
 
-.email-input-container img {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%; /* Cover the area behind button */
+.email-input-container img { /* Estilos para la imagen del lápiz */
+    position: absolute; /* Posiciona el lápiz de forma absoluta */
+    top: -15px; /* Ajuste para que la punta del lápiz inicie el trazo */
+    left: -70px; /* Ajuste de la posición horizontal del lápiz */
+    transform: rotate(25deg); /* Inclinación del lápiz */
+    width: 110px; /* Tamaño del lápiz para que se vea claro */
     height: auto;
-    z-index: 0;
-    pointer-events: none;
+    z-index: 2; /* Lápiz por encima de todo */
+    pointer-events: none; /* No interfiere con el clic del botón */
 }
 
 .email-cta-button {
-    position: relative;
+    position: relative; /* Asegura que el botón se muestre por encima de la línea */
     background-color: var(--primary-pink);
     color: #fff;
     padding: 15px 35px;
@@ -471,13 +484,27 @@ p {
     font-weight: var(--font-weight-semi-bold);
     cursor: pointer;
     transition: background-color 0.3s ease;
-    z-index: 1; /* Keep button above line */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Subtle shadow */
+    z-index: 1; /* Botón entre el lápiz y la línea */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* La línea del lápiz */
+.pencil-line {
+    position: absolute;
+    top: 5px; /* Ajusta la altura de la línea para que quede bien con la punta del lápiz */
+    left: -30px; /* Donde empieza la línea (ajustado para que salga del lápiz) */
+    width: calc(100% + 70px); /* Ajusta el ancho para que la línea se extienda más allá del botón */
+    height: 2px; /* Grosor de la línea */
+    background: linear-gradient(to right, transparent 0%, #ccc 20%, #ccc 80%, transparent 100%); /* Simula la línea que se dibuja */
+    z-index: 0; /* Línea por debajo del botón */
+    transform: rotate(2deg); /* Gira ligeramente para seguir la inclinación del lápiz */
+    opacity: 0.7; /* Transparencia para que no sea tan prominente */
 }
 
 .offer-content-right {
-    flex: 1;
-    min-width: 300px;
+    /* flex: 1; */ /* Quita el flex:1 para que ocupe el ancho necesario sin expandirse demasiado */
+    min-width: 350px; /* Asegura un ancho mínimo para la imagen del tigre */
+    max-width: 600px; /* Limita el ancho máximo de la imagen del tigre */
     text-align: center;
 }
 
@@ -485,8 +512,103 @@ p {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; /* Center image */
+    margin: 0 auto; /* Centra la imagen del tigre */
 }
+
+
+/* ------------------------------------------------------------- */
+/* MEDIA QUERIES - Ajustes Críticos para la Visibilidad y Layout */
+/* ------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .offer-section {
+        flex-direction: column; /* Apila las columnas */
+        gap: 30px;
+        /* Si quieres que el texto y la imagen del kit vayan a la izquierda, y el tigre a la derecha,
+           tendrías que reevaluar la distribución aquí o usar un grid.
+           Por ahora, mantengo la disposición en columna para simplificar el responsive. */
+    }
+
+    .offer-content-left, .offer-content-right {
+        max-width: 90%; /* Se expanden más en pantallas más pequeñas */
+        margin: 0 auto; /* Centra los bloques */
+    }
+
+    .offer-content-left h2 {
+        font-size: 1.6em; /* Un poco más pequeño para tabletas */
+    }
+
+    /* Asegúrate de que el contenedor de email se centre en el layout de columna */
+    .email-input-container {
+        width: fit-content;
+        margin: 20px auto 0 auto;
+    }
+
+    .email-input-container img {
+        top: -15px;
+        left: -60px;
+        width: 100px;
+        transform: rotate(25deg);
+    }
+
+    .pencil-line {
+        top: 5px;
+        left: -25px;
+        width: calc(100% + 60px);
+        transform: rotate(2deg);
+        opacity: 0.7;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .offer-content-left h2 {
+        font-size: 1.4em; /* Más pequeño para móviles */
+    }
+
+    .email-input-container img {
+        top: -10px;
+        left: -50px;
+        width: 80px;
+        transform: rotate(25deg);
+    }
+
+    .pencil-line {
+        top: 2px;
+        left: -20px;
+        width: calc(100% + 40px);
+        transform: rotate(2deg);
+        opacity: 0.7;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .offer-content-left h2 {
+        font-size: 1.2em; /* Aún más pequeño para móviles muy pequeños */
+    }
+
+    .email-input-container img {
+        top: -5px;
+        left: -40px;
+        width: 70px;
+        transform: rotate(25deg);
+    }
+
+    .pencil-line {
+        top: 0px;
+        left: -15px;
+        width: calc(100% + 30px);
+        transform: rotate(2deg);
+        opacity: 0.7;
+        display: block;
+    }
+}
+
+    .welcome-intro h2, .services-overview h2, .why-choose-us h2 {
+        font-size: 2.5em;
+        text-align: center;
+    }
 
 /* --- Welcome Section (Image 3.jpg) --- */
 .welcome-section {
