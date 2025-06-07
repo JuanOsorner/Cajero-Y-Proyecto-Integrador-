@@ -232,3 +232,61 @@ Fix:
     git pull origin main --allow-unrelated-histories
 
 Then save and close the editor (e.g., in Vim: press i, write your message, then Esc, followed by :wq).
+
+# github's tricks 😈
+
+## Projects
+
+### 🚀 Step 1: Create a New Project
+
+- Go to your profile or organization page and click the Projects tab.
+
+- Click New project.
+
+- Choose a template (Board, Table, Roadmap) or start blank.
+
+- Name your project and click Create
+
+### 📋 Step 2: Add a Description and README
+
+- Click the Settings (⋯) icon.
+
+- Add a short description to describe your project’s purpose.
+
+- Write a README with usage instructions, links, or team notes 
+
+### ✅ Step 3: Add Issues or Draft Items
+
+- Paste an existing issue or PR URL into the “Add item” field.
+
+- Or create draft issues directly by typing and pressing Enter
+
+### 🗂️ Step 4: Customize with Fields & Views
+
+- Click Add field to create custom properties like:
+
+- Iteration field for sprints
+
+- Priority field (e.g., High/Medium/Low 
+
+### 🔁 Step 5: Automate Workflows
+
+Enable automation rules such as:
+
+- Auto-moving closed issues to “Done”
+
+- Archiving items after completion
+
+- Automatically adding new items based on filters
+
+### 📈 Step 6: Use Insights & Tracking
+
+Explore built-in analytics like charts and project insights to track your progress and performance .
+
+### 🛠️ Step 7: Maintain & Collaborate
+
+- Use the README to document project usage.
+
+- Communicate with updates, mentions, and assign collaborators
+
+- Break large tasks into smaller issues and track each one
