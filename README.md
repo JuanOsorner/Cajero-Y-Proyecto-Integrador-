@@ -27,6 +27,13 @@ macOS/Linux:
 
     git config --global core.autocrlf input
 
+### 💡 Pro tip
+
+
+To have git fetch always remove stale remote references, set:
+
+    git config --global fetch.prune true
+
 ## 3. 🌐 Connect to the Remote Repository
 
 Copy the HTTPS URL of the remote repo.
@@ -183,6 +190,37 @@ Revert without editing message:
     git revert --no-edit <commit-hash>
 
 This adds a reverse commit to preserve the history while removing the effects of a past commit.
+
+## 🧽 Deleting Remote and Local Branches in Git
+
+When you delete a branch on GitHub (remote), it doesn't remove the branch from your local repository. Here's how to clean up both remote-tracking references and your own local branch safely:
+
+🔹 Step 1: Switch to a safe branch
+First, make sure you're not on the branch you want to delete. Switch to a stable branch like main or develop:
+
+    git checkout main
+
+🔹 Step 2: Remove the local branch
+
+To delete your local branch only if it’s already merged:
+
+    git branch -d branch-name
+
+If the branch has unmerged commits and you still want to delete, you can force it (use with caution):
+
+    git branch -D branch-name
+
+🔹 Step 3: Prune remote-tracking references
+
+Deleting the branch remotely (on GitHub) doesn't update your local metadata—you’ll still see something like origin/branch-name. To clean up those stale references:
+
+    git fetch --prune
+
+Or use this equivalent command:
+
+    git remote prune origin
+
+This removes any local references to remote branches that no longer exist 
 
 # 🛡️ Common Error & Fix
 Error:
