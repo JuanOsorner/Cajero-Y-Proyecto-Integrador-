@@ -1,0 +1,30 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+}
+
+#cart-items {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #e63946;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+a button {
+  background-color: #457b9d;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 10px;
+}

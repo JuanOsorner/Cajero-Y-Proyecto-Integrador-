@@ -14,12 +14,12 @@
                 <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="logo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Buscar productos, categorías, diseños...">
+               <input type="text" id="buscador" placeholder="Buscar productos, categorías, diseños...">
                 <button type="submit"><img src="./img/imagen.png" alt="Buscar"></button>
             </div>
             <nav class="top-nav">
                 <a href="#" class="profile-icon"><img src="./img/perfil.png" alt="Perfil"></a>
-                <a href="#" class="cart-icon"><img src="./img/carrito.png" alt="Carrito"></a>
+                <a href="carrito.html" class="cart-icon"><img src="./img/carrito.png" alt="Carrito"></a>
             </nav>
         </div>
     </header>
@@ -66,7 +66,8 @@
                         <div class="product-info">
                             <h4>Mousepad AngryBirds"</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$20.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
                             </div>
                     </div>
 
@@ -78,7 +79,8 @@
                         <div class="product-info">
                             <h4>Tazas Personalizadas"</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$17.500</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
                         </div>
                     </div>
 
@@ -90,7 +92,9 @@
                         <div class="product-info">
                             <h4>Camiseta con tu propio diseño</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$45.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
 
@@ -102,7 +106,9 @@
                         <div class="product-info">
                             <h4>Camiseta Oversize </h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$55.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
                     <div class="product-card">
@@ -113,7 +119,9 @@
                         <div class="product-info">
                             <h4>Camiseta con un estilo de mandala</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$37.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
                     <div class="product-card">
@@ -124,7 +132,9 @@
                         <div class="product-info">
                             <h4>Variedad de productos para estampados</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$75.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
                     <div class="product-card">
@@ -135,7 +145,9 @@
                         <div class="product-info">
                             <h4>Camiseta Oversize BEER CAMPING</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$43.200</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
                     <div class="product-card">
@@ -146,7 +158,9 @@
                         <div class="product-info">
                             <h4>Camiseta Oversize Blue </h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$50.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
                     <div class="product-card">
@@ -157,7 +171,9 @@
                         <div class="product-info">
                             <h4>Buzo con una tematica de Texas</h4>
                             <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            <p class="product-price">$XX.XX</p>
+                            <p class="product-price">$60.000</p>
+                            <button class="add-to-cart-btn">Agregar al carrito</button>
+
                         </div>
                     </div>
 
@@ -223,5 +239,28 @@
             </div>
         </div>
     </footer>
+    <script src="./js/carrito.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const input = document.getElementById("buscador");
+    const productos = document.querySelectorAll(".product-card");
+
+    input.addEventListener("input", () => {
+      const texto = input.value.toLowerCase();
+
+      productos.forEach(card => {
+        const nombre = card.querySelector("h4").textContent.toLowerCase();
+        const descripcion = card.querySelector(".product-description").textContent.toLowerCase();
+
+        if (nombre.includes(texto) || descripcion.includes(texto)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
