@@ -3,20 +3,18 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String contraseña;
-    public Usuario(Integer id, String nombre, String correo, String contraseña){
+
+    public Usuario(Integer id, String nombre, String correo, String contraseña) {
         this.id = id;
         this.nombre = nombre;
-        this.correo = correo;
+        // Validamos el correo al crear el usuario
+        if (correo != null && correo.contains("@")) {
+            this.correo = correo;
+        } else {
+            System.out.println("Error: El correo debe contener '@'.");
+            this.correo = null; // O podrías lanzar una excepción
+        }
         this.contraseña = contraseña;
-        boolean valor = false;
-        for(int i = 0; i<correo.length();i++){
-            if(correo.charAt(i)=='@') {
-                valor = true;
-            }
-        }
-        if(!valor){
-            System.out.println("Ingrese @");
-        }
     }
 
     public Integer getId() {
@@ -40,7 +38,13 @@ public class Usuario {
     }
 
     public void setCorreo(String correo) {
-        this.correo = correo;
+        // Validamos el correo al actualizarlo
+        if (correo != null && correo.contains("@")) {
+            this.correo = correo;
+        } else {
+            System.out.println("Error: El correo debe contener '@'.");
+            this.correo = null; // O podrías lanzar una excepción
+        }
     }
 
     public String getContraseña() {
@@ -51,18 +55,26 @@ public class Usuario {
         this.contraseña = contraseña;
     }
 
-    public String[] iniciarSesion(String correo, String contraseña, String Ccontraseña){
-        String[] vector = {};
-        if(contraseña != Ccontraseña){
-            System.out.println("Las contraseñas no coinciden");
-        }else{
-            vector[0]=correo;
-            vector[1]=contraseña;
+    public boolean iniciarSesion(String correo, String contraseña) {
+        if (this.correo != null && this.correo.equals(correo) && this.contraseña != null && this.contraseña.equals(contraseña)) {
+            System.out.println("Inicio de sesión exitoso para: " + this.nombre);
+            return true;
+        } else {
+            System.out.println("Correo o contraseña incorrectos.");
+            return false;
         }
-        return vector;
     }
 
-    public void registrase(){
-        
+    public boolean registrarse() {
+        if (this.nombre != null && !this.nombre.isEmpty() &&
+            this.correo != null && !this.correo.isEmpty() && this.correo.contains("@") &&
+            this.contraseña != null && !this.contraseña.isEmpty()) {
+            System.out.println("Usuario " + this.nombre + " registrado exitosamente.");
+            // Aquí iría la lógica para guardar el usuario en una base de datos.
+            return true;
+        } else {
+            System.out.println("Error al registrar: Faltan datos esenciales (nombre, correo o contraseña).");
+            return false;
+        }
     }
 }
