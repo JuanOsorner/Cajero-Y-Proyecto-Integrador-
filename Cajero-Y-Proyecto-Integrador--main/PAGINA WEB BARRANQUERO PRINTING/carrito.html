@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Barranquero Printing</title>
+    <link rel="stylesheet" href="./css/Catalogo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .cart-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cart-items {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 2fr 1fr 1fr 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .cart-item-info h4 {
+            margin: 0;
+            color: #333;
+        }
+
+        .cart-item-price {
+            color: #2c5282;
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .quantity-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .remove-btn {
+            color: #e53e3e;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .cart-summary {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .summary-row.total {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2c5282;
+        }
+
+        .checkout-btn {
+            background: #2c5282;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .checkout-btn:hover {
+            background: #2b6cb0;
+        }
+
+        .empty-cart {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        .empty-cart i {
+            font-size: 4rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .continue-shopping {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #2c5282;
+            text-decoration: none;
+        }
+
+        .continue-shopping:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-yellow-line"></div>
+    <header class="header">
+        <div class="header-bar">
+            <div class="logo-header">
+                <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="logo-img">
+            </div>
+            <form class="search-bar-header">
+                <input type="text" id="buscador" placeholder="Buscar productos, categorías, diseños...">
+                <span class="search-icon-header"><i class="fas fa-search"></i></span>
+            </form>
+            <button class="cta-button-header">¡Libera tu creatividad hoy!</button>
+            <div class="user-cart-icons">
+                <div class="user-icon-container" id="userIconContainer">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-icon-container" id="profileIconContainer">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="cart-icon-container" id="cartIconContainer">
+                    <i class="fas fa-shopping-cart cart-icon-smaller"></i>
+                </div>
+            </div>
+            <div class="nav-icons">
+                <a href="menu_inicio.html" title="Menú de Inicio"><i class="fas fa-home"></i></a>
+                <a href="index.html" title="Inicio"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Tu Carrito de Compras</h1>
+            <a href="catalogo.html" class="continue-shopping">
+                <i class="fas fa-arrow-left"></i> Continuar Comprando
+            </a>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+            <!-- Los items del carrito se cargarán dinámicamente aquí -->
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Envío</span>
+                <span id="shipping">$0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">
+                Proceder al Pago
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Función para cargar los items del carrito desde localStorage
+        function loadCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartContainer = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const shippingElement = document.getElementById('shipping');
+            const totalElement = document.getElementById('total');
+
+            if (cartItems.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h2>Tu carrito está vacío</h2>
+                        <p>¡Agrega algunos productos para comenzar a comprar!</p>
+                        <a href="catalogo.html" class="continue-shopping">Ver Catálogo</a>
+                    </div>
+                `;
+                return;
+            }
+
+            let subtotal = 0;
+            cartContainer.innerHTML = cartItems.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                return `
+                    <div class="cart-item" data-id="${item.id}">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>${item.description}</p>
+                        </div>
+                        <div class="cart-item-price">$${item.price.toLocaleString()}</div>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        </div>
+                        <div class="cart-item-total">$${itemTotal.toLocaleString()}</div>
+                        <button class="remove-btn" onclick="removeItem(${item.id})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+
+            const shipping = subtotal > 100000 ? 0 : 10000;
+            const total = subtotal + shipping;
+
+            subtotalElement.textContent = `$${subtotal.toLocaleString()}`;
+            shippingElement.textContent = shipping === 0 ? 'Gratis' : `$${shipping.toLocaleString()}`;
+            totalElement.textContent = `$${total.toLocaleString()}`;
+        }
+
+        // Función para actualizar la cantidad de un item
+        function updateQuantity(id, newQuantity) {
+            if (newQuantity < 1) return;
+            
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === id);
+            
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity = newQuantity;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        // Función para eliminar un item del carrito
+        function removeItem(id) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const updatedCart = cart.filter(item => item.id !== id);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            loadCart();
+        }
+
+        // Función para proceder al pago
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            // Aquí puedes agregar la lógica para redirigir a la página de pago
+            alert('Redirigiendo al proceso de pago...');
+        });
+
+        // Cargar el carrito al iniciar la página
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+</body>
+</html>
+

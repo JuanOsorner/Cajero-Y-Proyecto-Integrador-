@@ -1,0 +1,564 @@
+/* Variables de color para mantener la identidad visual */
+:root {
+    --primary-blue: #007bff; /* Un azul genérico, ajusta si es necesario */
+    --secondary-blue: #00c0f3; /* Otro azul, ajusta si es necesario */
+    --text-color: #333;
+    --light-gray: #f0f2f5;
+    --border-color: #ddd;
+    --white: #fff;
+    --button-facebook: #3b5998;
+    --button-google: #dd4b39;
+    --link-color: #007bff;
+    --pink-accent: #ff007f; /* Color rosa del header y descuentos */
+    --gray-bg-cards: #d4d4d4; /* Fondo gris de las tarjetas de producto */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-placeholder {
+    width: 150px; /* Ajusta según el tamaño de tu logo */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-placeholder .logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 20px;
+    max-width: 600px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.search-bar button img {
+    width: 20px;
+    height: 20px;
+}
+
+.top-nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.top-nav img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+/* Hero Section (sección superior grande con texto y logo) */
+.hero-section {
+    background-color: var(--pink-accent); /* Color rosa base del header */
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden; /* Para contener los elementos flotantes o posicionados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Altura mínima para la sección */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('hero-background-image.jpg'); /* Imagen de fondo grande */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1; /* Ligera opacidad para que se vea el fondo rosa */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Para que ocupe todo el ancho del container */
+    flex-wrap: wrap; /* Para que los elementos se adapten en pantallas pequeñas */
+}
+
+.hero-content .text-content {
+    color: var(--white);
+    text-align: left;
+    flex: 2; /* Ocupa más espacio que las imágenes pequeñas */
+    min-width: 280px; /* Mínimo para que el texto no se comprima demasiado */
+}
+
+.hero-content .text-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.hero-content .text-content p {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.hero-images {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex: 1; /* Permite que las imágenes ocupen su espacio */
+    max-width: 300px; /* Limita el ancho de las imágenes pequeñas */
+    margin-left: 20px; /* Espacio entre el texto y las imágenes */
+}
+
+.small-hero-image {
+    width: 80px; /* Ajusta el tamaño de las imágenes pequeñas */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-logo-large {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    max-width: 300px; /* Ajusta el tamaño del logo grande */
+    opacity: 0.8; /* Para que se vea ligeramente transparente */
+    z-index: 0; /* Asegura que el logo grande esté detrás del texto */
+}
+
+.hero-logo-large img {
+    width: 100%;
+    height: auto;
+}
+
+/* Main Content - Catálogo */
+.main-content.catalog-page {
+    background-color: var(--white); /* Fondo blanco para el contenido principal */
+    padding: 40px 0;
+    display: block; /* Para que se comporte como un bloque normal y contenga sidebar/productos */
+}
+
+.main-content.catalog-page .container {
+    align-items: flex-start; /* Alinea el sidebar y los productos en la parte superior */
+    display: flex; /* Habilita flexbox para el container del catálogo */
+    gap: 30px; /* Espacio entre el sidebar y los productos */
+}
+
+.sidebar {
+    flex: 0 0 200px; /* No crece, no se encoge, ancho base 200px */
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar h3 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 1rem;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active { /* Puedes añadir una clase 'active' con JS para la categoría seleccionada */
+    color: var(--primary-blue);
+    font-weight: bold;
+}
+
+.products-section {
+    flex: 1; /* Ocupa el espacio restante */
+    background-color: var(--gray-bg-cards); /* Fondo gris de las tarjetas de producto */
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.products-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columnas en pantallas grandes, se adaptan */
+    gap: 25px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    display: flex; /* Usa flexbox para alinear la imagen y la info */
+    flex-direction: row; /* Imagen a la izquierda, info a la derecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px; /* Padding dentro de la tarjeta */
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--pink-accent);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    z-index: 2; /* Para que esté por encima de la imagen */
+}
+
+.product-image-container {
+    flex: 0 0 100px; /* Ancho fijo para la imagen del producto */
+    height: 100px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-bg-cards); /* Fondo de la imagen como en la maqueta */
+    border-radius: 5px;
+}
+
+.product-image {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.product-info {
+    flex: 1; /* Ocupa el resto del espacio */
+    text-align: left;
+}
+
+.product-info h4 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* Footer (copiado de los anteriores) */
+.footer {
+    background-color: var(--white);
+    padding: 40px 0 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinea los ítems en la parte superior */
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* Asegura que no se encogen demasiado */
+    margin-bottom: 30px;
+}
+
+.logo-footer-col {
+    flex: 1.5; /* Más espacio para la columna del logo y descripción */
+}
+
+.logo-placeholder-footer {
+    width: 180px; /* Ajusta según el tamaño de tu logo en el footer */
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo-placeholder-footer .logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.footer-col h3 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-col p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-blue);
+}
+
+.social-icons-footer {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons-footer img {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+.help-center {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    flex: 0;
+    white-space: nowrap;
+}
+
+.help-center img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content .text-content {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .hero-logo-large {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: 30px;
+        max-width: 250px; /* Ajuste para móviles */
+    }
+    .hero-images {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .main-content.catalog-page .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sidebar {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .products-section {
+        width: 100%;
+        padding: 15px; /* Menos padding en móviles */
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste para móviles */
+        gap: 15px;
+    }
+    .product-card {
+        flex-direction: column; /* Apila imagen y texto en pantallas pequeñas */
+        align-items: center;
+        text-align: center;
+    }
+    .product-image-container {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .product-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-bar {
+        width: 100%;
+        margin: 15px 0;
+    }
+    .top-nav {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-col {
+        min-width: unset;
+        width: 100%;
+    }
+    .logo-footer-col {
+        align-items: center;
+        justify-content: center;
+    }
+    .logo-placeholder-footer {
+        justify-content: center;
+    }
+    .social-icons-footer {
+        justify-content: center;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-bottom p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content .text-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content .text-content p {
+        font-size: 1.2rem;
+    }
+    .small-hero-image {
+        width: 60px;
+        height: 60px;
+    }
+    .products-section h2 {
+        font-size: 1.5rem;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+} 

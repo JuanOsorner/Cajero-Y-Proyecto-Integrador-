@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - Barranquero Printing</title>
+    <link rel="stylesheet" href="./css/Catalogo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="top-yellow-line"></div>
+    <header class="header">
+        <div class="header-bar">
+            <div class="logo-header">
+                <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="logo-img">
+            </div>
+            <form class="search-bar-header">
+                <input type="text" id="buscador" placeholder="Buscar productos, categorías, diseños...">
+                <span class="search-icon-header"><i class="fas fa-search"></i></span>
+            </form>
+            <button class="cta-button-header">¡Libera tu creatividad hoy!</button>
+            <div class="user-cart-icons">
+                <div class="user-icon-container" id="userIconContainer">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="profile-icon-container" id="profileIconContainer">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <div class="cart-icon-container" id="cartIconContainer">
+                    <i class="fas fa-shopping-cart cart-icon-smaller"></i>
+                </div>
+            </div>
+            <div class="nav-icons">
+                <a href="menu_inicio.html" title="Menú de Inicio"><i class="fas fa-home"></i></a>
+                <a href="index.html" title="Inicio"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+    </header>
+    <div class="catalogo-hero-block">
+        <h1>¡Nuestros productos...</h1>
+        <div class="catalogo-hero-row">
+            <img src="./img/sublimacion materiales.png" alt="Sublimación Materiales" class="catalogo-materiales-img-large">
+            <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="catalogo-logo-img-large">
+        </div>
+    </div>
+    <div class="catalogo-blue-banner"></div>
+    <div class="catalogo-opaca-section">
+        <div class="catalogo-opaca-overlay">
+            <div class="catalogo-opaca-menu">
+                <!-- Aquí va el menú desplegable de categorías -->
+                <div class="dropdown-menu-categorias">
+                    <button class="dropdown-btn"><i class="fas fa-bars"></i> Categorías</button>
+                    <ul class="dropdown-list">
+                        <li>Mouse Pads</li>
+                        <li>Mugs</li>
+                        <li>Ofertas</li>
+                        <li>Papeles</li>
+                        <li>Camisetas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="catalogo-opaca-text">
+                <p>...para que te antojes de lo que quieras!</p>
+            </div>
+            <div class="catalogo-opaca-cart">
+                <i class="fas fa-shopping-cart cart-icon-opaca"></i>
+                <span class="cart-items-count">0 items</span>
+            </div>
+        </div>
+        <img src="./img/opaca.png" alt="Fondo Opaco" class="catalogo-opaca-img">
+    </div>
+
+    <main class="main-content catalog-page">
+        <div class="container">
+            
+
+            <section class="products-section">
+                <h2>Productos más populares</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 1.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Mousepad AngryBirds</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$20.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(1, 'Mousepad AngryBirds', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 20000, './img/Carrusel 1.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                            </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 2.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Tazas Personalizadas</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$17.500</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(2, 'Tazas Personalizadas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 17500, './img/Carrusel 2.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 3.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Camiseta con tu propio diseño</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$45.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(3, 'Camiseta con tu propio diseño', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 45000, './img/Carrusel 3.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Camiseta catálogo.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Camiseta Oversize</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$55.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(4, 'Camiseta Oversize', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 55000, './img/Camiseta catálogo.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 5.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Camiseta con un estilo de mandala</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$37.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(5, 'Camiseta con un estilo de mandala', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 37000, './img/Carrusel 5.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 4.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Variedad de productos para estampados</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$75.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(6, 'Variedad de productos para estampados', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 75000, './img/Carrusel 4.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 6.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Camiseta Oversize BEER CAMPING</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$43.200</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(7, 'Camiseta Oversize BEER CAMPING', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 43200, './img/Carrusel 6.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/camisaperzonalizada.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Camiseta Oversize Blue</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$50.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(8, 'Camiseta Oversize Blue', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 50000, './img/camisaperzonalizada.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <span class="discount-badge">35%</span>
+                        <div class="product-image-container">
+                            <img src="./img/Carrusel 7.png" alt="Camiseta Barranquero Printing" class="product-image">
+                        </div>
+                        <div class="product-info">
+                            <h4>Buzo con una tematica de Texas</h4>
+                            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p class="product-price">$60.000</p>
+                            <button class="add-to-cart-btn" onclick="addToCart(9, 'Buzo con una tematica de Texas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 60000, './img/Carrusel 7.png')">
+                                <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-top-section">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="./img/Logotipo.png" alt="Barranquero Printing Footer Logo" class="footer-logo">
+                </div>
+                <p class="footer-tagline">Crea, crea e inspirate con infinitas posibilidades de diseño en BARRANQUERO PRINTING.</p>
+                <div class="stats">
+                    <p><span>5.056.251</span> Productos</p>
+                    <p><span>5.292.895</span> Clientes</p>
+                    <p><span>9.254</span> Tiendas</p>
+                </div>
+            </div>
+            <div class="footer-columns-container">
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#">Empresa certificada</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Nuestras licencias</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Colecciones</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Empresa certificada</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Nuestras licencias</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Colecciones</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Páginas</h4>
+                    <ul>
+                        <li><a href="#">Crear una tienda</a></li>
+                        <li><a href="#">Afiliados</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Registro</a></li>
+                        <li><a href="#">Acceso</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>2025 - Todos los derechos reservados. BARRANQUERO PRINTING, Santa Elena, Vereda El Plan, Medellín - Antioquia Colombia. Número de registro mercantil: 09292025. Número de IVA: CLI905218545</p>
+        </div>
+    </footer>
+
+    <div class="help-button">
+        <i class="fas fa-question-circle"></i>
+        <span>Centro de ayuda</span>
+    </div>
+    </footer>
+    <script src="./js/carrito.js"></script>
+    
+    <script>
+        // Función para agregar productos al carrito
+        function addToCart(id, name, description, price, image) {
+            // Obtener el carrito actual del localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Verificar si el producto ya está en el carrito
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                // Si el producto ya existe, aumentar la cantidad
+                existingItem.quantity += 1;
+            } else {
+                // Si el producto no existe, agregarlo al carrito
+                cart.push({
+                    id: id,
+                    name: name,
+                    description: description,
+                    price: price,
+                    quantity: 1,
+                    image: image
+                });
+            }
+            
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Mostrar notificación de éxito
+            showNotification('Producto agregado al carrito');
+            
+            // Actualizar el contador del carrito
+            updateCartCount();
+        }
+
+        // Función para mostrar notificaciones
+        function showNotification(message) {
+            // Crear elemento de notificación
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            
+            // Agregar estilos a la notificación
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#2c5282';
+            notification.style.color = 'white';
+            notification.style.padding = '1rem 2rem';
+            notification.style.borderRadius = '4px';
+            notification.style.zIndex = '1000';
+            notification.style.animation = 'slideIn 0.5s ease-out';
+            
+            // Agregar la notificación al documento
+            document.body.appendChild(notification);
+            
+            // Remover la notificación después de 3 segundos
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.5s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 500);
+            }, 3000);
+        }
+
+        // Función para actualizar el contador del carrito
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            // Actualizar el contador en la interfaz
+            const cartCountElement = document.querySelector('.cart-items-count');
+            if (cartCountElement) {
+                cartCountElement.textContent = `${totalItems} items`;
+            }
+        }
+
+        // Agregar estilos para las animaciones
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Actualizar el contador del carrito al cargar la página
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>

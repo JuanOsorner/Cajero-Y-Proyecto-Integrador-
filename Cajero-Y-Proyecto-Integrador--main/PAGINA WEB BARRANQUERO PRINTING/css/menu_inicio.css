@@ -1,0 +1,384 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+.barranquero-logo-large {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+}
+
+.barranquero-logo-large img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image .Pencil {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: auto;
+    transform: rotate(15deg);
+    z-index: 2;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.hero-products-illustration {
+    flex: 1;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.hero-products-illustration img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries para Responsive Design */
+@media screen and (max-width: 1200px) {
+    .hero-section {
+        gap: 4rem;
+    }
+
+    .barranquero-logo-large {
+        max-width: 350px;
+    }
+
+    .barranquero-logo-large img {
+        max-width: 250px;
+    }
+
+    .hero-image {
+        max-width: 450px;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+    }
+
+    .hero-image .Pencil {
+        width: 100px;
+        top: -25px;
+        right: -25px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .hero-section {
+        gap: 3rem;
+    }
+
+    .barranquero-logo-large {
+        max-width: 300px;
+    }
+
+    .barranquero-logo-large img {
+        max-width: 200px;
+    }
+
+    .hero-image {
+        max-width: 400px;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    .hero-image .Pencil {
+        width: 90px;
+        top: -20px;
+        right: -20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        margin-top: 60px;
+    }
+
+    .barranquero-logo-large {
+        max-width: 250px;
+    }
+
+    .barranquero-logo-large img {
+        max-width: 180px;
+    }
+
+    .hero-image {
+        max-width: 350px;
+    }
+
+    .hero-image img {
+        max-width: 300px;
+    }
+
+    .hero-image .Pencil {
+        width: 80px;
+        top: -15px;
+        right: -15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-section {
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .barranquero-logo-large {
+        max-width: 200px;
+    }
+
+    .barranquero-logo-large img {
+        max-width: 150px;
+    }
+
+    .hero-image {
+        max-width: 300px;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+    }
+
+    .hero-image .Pencil {
+        width: 70px;
+        top: -10px;
+        right: -10px;
+    }
+}
+
+.offer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--light-gray);
+    margin: 2rem 0;
+}
+
+.offer-content-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.offer-content-left h2 {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    max-width: 90%;
+}
+
+.offer-content-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 2rem;
+}
+
+.offer-content-right img {
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+}
+
+/* Media Queries para Responsive Design */
+@media screen and (max-width: 1200px) {
+    .offer-content-left h2 {
+        font-size: 1.6rem;
+        max-width: 95%;
+    }
+
+    .offer-content-right img {
+        max-width: 85%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .offer-content-left h2 {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+
+    .offer-content-right img {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .offer-section {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .offer-content-left {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .offer-content-left h2 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .offer-content-right {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .offer-content-right img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.product-carousel {
+    position: relative;
+    width: 100%;
+    padding: 3rem 0;
+    overflow: hidden;
+    margin: 2rem 0;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Carrusel fijo, no responsive */
+.carousel-items {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 20px 0 !important;
+    gap: 0 !important;
+}
+
+.carousel-item {
+    flex: 0 0 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+    height: 200px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #fff !important;
+    border: 4px solid #e6007e !important;
+    border-radius: 12px !important;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1) !important;
+    overflow: hidden !important;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s !important;
+    margin: 0 10px !important;
+}
+
+.carousel-item img {
+    width: 90% !important;
+    height: 90% !important;
+    object-fit: contain !important;
+    transition: transform 0.4s !important;
+}
+
+.carousel-item.active {
+    transform: scale(1.25) !important;
+    z-index: 2 !important;
+    border-color: #e6007e !important;
+    box-shadow: 0 8px 24px rgba(230,0,126,0.2) !important;
+}
+
+/* Elimina media queries que afecten al carrusel */
+@media screen and (max-width: 1600px),
+       screen and (max-width: 1200px),
+       screen and (max-width: 992px),
+       screen and (max-width: 768px),
+       screen and (max-width: 576px) {
+    .carousel-items,
+    .carousel-item,
+    .carousel-item img {
+        all: unset !important;
+    }
+}
+
+.carousel-arrow {
+    background: none;
+    color: #555;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    height: auto;
+    min-width: unset;
+    min-height: unset;
+    max-width: unset;
+    max-height: unset;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+    box-shadow: none;
+    position: relative;
+    padding: 0 12px;
+}
+
+.carousel-arrow:hover {
+    color: #e6007e;
+    background: none;
+    box-shadow: none;
+}
+
+.footer-logo {
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+} 

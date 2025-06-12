@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>App de Usuario</title>
+  <link rel="stylesheet" href="/css/usuario.css">
+  
+</head>
+<body>
+  <h1>Barranquero Printing: Donde tu imaginación vuela alto</h1>
+
+  <div id="registro">
+    <h2>Registro</h2>
+    <input id="regNombre" placeholder="Nombre">
+    <input id="regCorreo" placeholder="Correo">
+    <input id="regClave" placeholder="Contraseña" type="password">
+    <button onclick="registrarUsuario()">Registrarse</button>
+  </div>
+
+  <div id="login">
+    <h2>Iniciar Sesión</h2>
+    <input id="loginCorreo" placeholder="Correo">
+    <input id="loginClave" placeholder="Contraseña" type="password">
+    <button onclick="iniciarSesion()">Entrar</button>
+  </div>
+
+  <div id="productos" style="display:none;">
+    <h2>Productos</h2>
+    <div id="listaProductos"></div>
+    <h3>Carrito</h3>
+    <ul id="carritoLista"></ul>
+  </div>
+
+  <script src="/js/usuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador - Barranquero Printing</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-yellow-line"></div>
+    <header class="header">
+        <div class="header-main-row" style="gap: 0;">
+            <div class="header-left" style="min-width:120px;">
+                <div class="logo" style="width:90px;min-width:90px;">
+                    <a href="./index.html"><img src="./img/Logotipo.png" alt="Barranquero Printing Logo" style="height:40px;width:auto;"></a>
+                </div>
+            </div>
+            <div class="header-center" style="flex:1;display:flex;justify-content:center;align-items:center;min-width:350px;">
+                <div class="search-bar" style="max-width:700px;width:100%;border-width:1px;">
+                    <input type="text" placeholder="Buscar productos, categorías, diseños..." style="font-weight:400;font-size:1em;padding:10px 18px;">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="header-right" style="display:flex;align-items:center;gap:18px;min-width:320px;justify-content:flex-end;">
+                <button class="admin-login-btn" style="background:#1da1f2;color:#fff;border:none;border-radius:22px;padding:10px 22px;font-size:1em;font-weight:600;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:background 0.2s;">Iniciar sesión de administrador</button>
+                <div class="user-cart-icons" style="display:flex;align-items:center;gap:10px;">
+                    <div class="user-icon-container" id="userIconContainer">
+                        <i class="fas fa-user-circle" style="font-size:2em;"></i>
+                    </div>
+                </div>
+                <div class="nav-icons" style="display:flex;align-items:center;gap:10px;">
+                    <a href="catalogo.html" title="Catálogo"><i class="fas fa-book"></i></a>
+                    <a href="index.html" title="Inicio"><i class="fas fa-home"></i></a>
+                    <a href="menu_inicio.html" title="Menú de Inicio" class="admin-nav-btn"><i class="fas fa-arrow-left"></i> <span style="margin-left:4px;">Menú de Inicio</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="admin-banner">
+        <div class="banner-text">¡Nuestro Módulo de Inventario!</div>
+        <img src="./img/Logotipo.png" alt="Barranquero Printing Logo" class="banner-logo">
+    </div>
+    <main class="admin-main">
+        <aside class="admin-sidebar">
+            <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Panel de control</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Acceso</a></li>
+                <li><a href="#"><i class="fas fa-list"></i> Categorías</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Productos</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Ventas</a></li>
+                <li><a href="#"><i class="fas fa-image"></i> Media</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Reporte de ventas</a></li>
+            </ul>
+        </aside>
+        <section class="admin-content">
+            <div class="admin-summary">
+                <div class="admin-summary-card"><span class="icon"><i class="fas fa-user"></i></span><span class="count">3</span><span class="label">Usuarios</span></div>
+                <div class="admin-summary-card"><span class="icon"><i class="fas fa-list"></i></span><span class="count">1</span><span class="label">Categoría</span></div>
+                <div class="admin-summary-card"><span class="icon"><i class="fas fa-box"></i></span><span class="count">3</span><span class="label">Productos</span></div>
+                <div class="admin-summary-card"><span class="icon"><i class="fas fa-dollar-sign"></i></span><span class="count">7</span><span class="label">Ventas</span></div>
+            </div>
+            <div class="admin-tables">
+                <div class="admin-table-block">
+                    <h4>Productos más vendidos</h4>
+                    <table class="admin-table">
+                        <thead><tr><th>Título</th><th>Total vendido</th><th>Cantidad total</th></tr></thead>
+                        <tbody>
+                            <tr><td>Producto 1</td><td>$100.000</td><td>10</td></tr>
+                            <tr><td>Producto 2</td><td>$80.000</td><td>8</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-table-block">
+                    <h4>Últimas ventas</h4>
+                    <table class="admin-table">
+                        <thead><tr><th>Producto</th><th>Fecha</th><th>Venta total</th></tr></thead>
+                        <tbody>
+                            <tr><td>Producto 1</td><td>2024-06-01</td><td>$20.000</td></tr>
+                            <tr><td>Producto 2</td><td>2024-06-02</td><td>$15.000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="admin-table-block">
+                    <h4>Productos recientemente añadidos</h4>
+                    <table class="admin-table">
+                        <thead><tr><th>Producto</th><th></th></tr></thead>
+                        <tbody>
+                            <tr><td>Producto 3</td><td><span class="badge">Nuevo</span></td></tr>
+                            <tr><td>Producto 4</td><td><span class="badge">Nuevo</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-top-section">
+            <div class="footer-inner-container">
+                <div class="footer-left">
+                    <div class="logo">
+                        <img src="./img/Logotipo.png" alt="Barranquero Printing Footer Logo" class="footer-logo">
+                    </div>
+                    <p class="footer-tagline">Crea, crea e inspirate con infinitas posibilidades de diseño en BARRANQUERO PRINTING.</p>
+                    <div class="stats">
+                        <p><span>5.056.251</span> Productos</p>
+                        <p><span>5.292.895</span> Clientes</p>
+                        <p><span>9.254</span> Tiendas</p>
+                    </div>
+                </div>
+                <div class="footer-columns-container">
+                    <div class="footer-col">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#">Empresa certificada</a></li>
+                            <li><a href="#">Política de cookies</a></li>
+                            <li><a href="#">Nuestras licencias</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Términos y condiciones</a></li>
+                            <li><a href="#">Colecciones</a></li>
+                            <li><a href="#">Noticias</a></li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Recursos</h4>
+                        <ul>
+                            <li><a href="#">Empresa certificada</a></li>
+                            <li><a href="#">Política de cookies</a></li>
+                            <li><a href="#">Nuestras licencias</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Términos y condiciones</a></li>
+                            <li><a href="#">Colecciones</a></li>
+                            <li><a href="#">Noticias</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Páginas</h4>
+                        <ul>
+                            <li><a href="#">Crear una tienda</a></li>
+                            <li><a href="#">Afiliados</a></li>
+                            <li><a href="#">Ofertas</a></li>
+                            <li><a href="#">Registro</a></li>
+                            <li><a href="#">Acceso</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <p>2025 - Todos los derechos reservados. BARRANQUERO PRINTING, Santa Elena, Vereda El Plan, Medellín - Antioquia Colombia. Número de registro mercantil: 09292025. Número de IVA: CLI905218545</p>
+        </div>
+        <button class="help-button left-help-button">
+            <i class="fas fa-question-circle"></i>
+            <span>Centro de ayuda</span>
+        </button>
+    </footer>
+</body>
+</html> 
