@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barranquero Printing - Iniciar Sesión / Registro</title>
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/login_registro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="top-yellow-line"></div>
+
+    <header class="header">
+        <div class="header-main-row">
+            <div class="header-left">
+                <div class="logo">
+                    <a href="./menu_inicio.html"><img src="./img/Logotipo png.png" alt="Barranquero Printing Logo"></a>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar productos, categorías, diseños...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="cta-button-header">¡Libera tu creatividad hoy!</button>
+                <div class="user-cart-icons">
+                    <div class="user-icon-container">
+                        <i class="fas fa-user-circle"></i> </div>
+                    <div class="profile-icon-container" id="profile-icon-container">
+                        <i class="fas fa-cog"></i> </div>
+                    <i class="fas fa-shopping-cart cart-icon-smaller"></i>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="./menu_inicio.html">Inicio</a></li>
+                <li><a href="./catalogo.html">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="login-register-main">
+        <section class="auth-container"> <div class="auth-box">
+                <div class="auth-header">
+                    <h2 id="auth-title">Iniciar sesión</h2>
+                    <p id="auth-subtitle">¿Aún no eres miembro? <a href="#" id="register-link">Regístrate una cuenta gratuita</a></p>
+                </div>
+
+                <div class="social-login" id="social-login-buttons">
+                    <button class="social-button facebook">
+                        <i class="fab fa-facebook-f"></i> Iniciar sesión con Facebook
+                    </button>
+                    <button class="social-button google">
+                        <i class="fab fa-google"></i> Iniciar sesión con Google
+                    </button>
+                </div>
+
+                <div class="divider" id="login-divider">
+                    <span>O inicie sesión a continuación</span>
+                </div>
+
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Dirección de correo electrónico *</label>
+                        <input type="email" id="login-email" placeholder="Dirección de correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña *</label>
+                        <input type="password" id="login-password" placeholder="Contraseña" required>
+                        <span class="forgot-password">¿Olvidaste tu contraseña? <a href="#">Haz click aquí.</a></span>
+                    </div>
+                    <button type="submit" class="auth-submit-button">Iniciar sesión de forma segura</button>
+                    <p class="privacy-text">
+                        <i class="fas fa-lock"></i> Este sitio está protegido por reCAPTCHA y se aplican la
+                        <a href="#">Política de privacidad</a> y los <a href="#">Términos de servicio</a> de Google.
+                    </p>
+                    <p id="login-status-message" class="status-message"></p> </form>
+
+                <form id="register-form" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" placeholder="Tu nombre completo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Dirección de correo electrónico</label>
+                        <input type="email" id="register-email" placeholder="Dirección de correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" placeholder="Crea una contraseña" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm-password" placeholder="Confirma tu contraseña" required>
+                    </div>
+                    <button type="submit" class="auth-submit-button">Registrarse</button>
+                    <p class="privacy-text">
+                        Al registrarte, aceptas nuestra
+                        <a href="#">Política de privacidad</a> y <a href="#">Términos de servicio</a>.
+                    </p>
+                    <p id="register-status-message" class="status-message"></p>
+                </form>
+
+            </div>
+        </section>
+
+        </main>
+
+    <footer class="footer">
+        <div class="footer-top-section">
+            <div class="footer-left">
+                <div class="logo">
+                    <img src="./img/Logotipo png.png" alt="Barranquero Printing Footer Logo">
+                </div>
+                <p class="footer-tagline">Crea, crea e inspirate con infinitas posibilidades de diseño en BARRANQUERO PRINTING.</p>
+                <div class="stats">
+                    <p><span>5.056.251</span> Productos</p>
+                    <p><span>5.292.895</span> Clientes</p>
+                    <p><span>9.254</span> Tiendas</p>
+                </div>
+            </div>
+            <div class="footer-columns-container">
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#">Empresa certificada</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Nuestras licencias</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Colecciones</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Empresa certificada</a></li>
+                        <li><a href="#">Política de cookies</a></li>
+                        <li><a href="#">Nuestras licencias</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Colecciones</a></li>
+                        <li><a href="#">Noticias</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Páginas</h4>
+                    <ul>
+                        <li><a href="#">Crear una tienda</a></li>
+                        <li><a href="#">Afiliados</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Registro</a></li>
+                        <li><a href="#">Acceso</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>2025 - Todos los derechos reservados. BARRANQUERO PRINTING, Santa Elena, Vereda El Plan, Medellín - Antioquia Colombia. Número de registro mercantil: 09292025. Número de IVA: CLI905218545</p>
+        </div>
+    </footer>
+
+    <div class="help-button">
+        <i class="fas fa-question-circle"></i>
+        <span>Centro de ayuda</span>
+    </div>
+
+    <div id="session-active-modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modal-message">Ya tienes una sesión activa. Si deseas iniciar otra, presiona en 'Cerrar sesión'.</p>
+            <div class="modal-buttons">
+                <button id="modal-logout-btn" class="modal-button primary">Cerrar sesión</button>
+                <button id="modal-goto-home-btn" class="modal-button secondary">Ir a la página de inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/header_logic.js"></script>
+    <script type="module" src="./js/login_registro.js"></script>
+</body>
+</html>

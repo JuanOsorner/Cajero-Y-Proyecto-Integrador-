@@ -1,0 +1,710 @@
+/* login_registro.css */
+
+/* --- Global Styles & Variables (asegúrate de que estén al principio o que estos valores prevalezcan) --- */
+:root {
+    /* ... Tus variables existentes ... */
+    --barranquero-blue-light: #C7EAF2; /* Un azul más claro para el borde del input focus, si se necesita */
+}
+
+/* ... (resto del código CSS existente sin cambios significativos en el header/footer) ... */
+
+/* General positioning and background for the auth section */
+.login-register-main {
+    background-color: var(--barranquero-blue); /* Fondo azul como en la imagen */
+    /* Ajusta min-height si es necesario, pero debería ser dinámico */
+    min-height: calc(100vh - 8px - 160px);
+    display: flex;
+    justify-content: flex-end; /* Alinea a la derecha */
+    align-items: center;
+    padding: 40px 20px;
+    padding-right: 10%; /* Ajusta este valor para mover el cuadro a la derecha */
+    box-sizing: border-box; /* Asegura que padding no sume al width */
+}
+
+.auth-container {
+    display: flex;
+    justify-content: flex-end; /* Mantener a la derecha para empujar el contenido */
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 0; /* Ya lo ajustamos en .login-register-main */
+    box-sizing: border-box;
+}
+
+.auth-box {
+    background-color: #ffffff;
+    border-radius: 10px; /* Bordes menos redondeados que antes */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 35px 45px; /* Ajusta el padding interno, más ancho horizontalmente */
+    width: 100%;
+    max-width: 420px; /* Ligeramente más ancho, se ve un poco más que 380px */
+    text-align: center;
+    z-index: 10;
+    margin-left: auto; /* Empuja el cuadro a la derecha */
+    box-sizing: border-box;
+}
+
+.auth-header {
+    text-align: left; /* Alinea el texto a la izquierda como en la imagen */
+    margin-bottom: 30px; /* Espacio extra debajo del encabezado */
+}
+
+.auth-header h2 {
+    font-size: 2.5em; /* Un poco más grande como en la imagen */
+    color: var(--dark-text);
+    margin-bottom: 5px; /* Más cerca de la descripción */
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.5px; /* Un poco más apretado */
+}
+
+.auth-header p {
+    font-size: 1.05em; /* Ligeramente más grande */
+    color: var(--medium-text);
+    margin-bottom: 0; /* Sin margen inferior */
+}
+
+.auth-header p a {
+    color: var(--barranquero-blue); /* Color del enlace del registro */
+    text-decoration: none;
+    font-weight: var(--font-weight-bold); /* Más negrita */
+}
+
+.auth-header p a:hover {
+    text-decoration: underline;
+}
+
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px; /* Espacio antes del divisor */
+}
+
+.social-button {
+    /* Mantenemos el fondo blanco y borde gris de la imagen */
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc; /* Borde más sutil */
+    border-radius: 5px; /* Menos redondeado */
+    padding: 12px 20px;
+    font-size: 1.05em; /* Un poco más grande */
+    font-weight: var(--font-weight-semi-bold);
+    color: var(--dark-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra sutil como en la imagen */
+}
+
+.social-button:hover {
+    background-color: #f7f7f7; /* Ligero cambio al pasar el ratón */
+    border-color: #c7c7c7;
+}
+
+.social-button .fab {
+    font-size: 1.2em;
+}
+
+/* Colores específicos para íconos sociales según la imagen */
+.social-button.facebook {
+    color: #4267B2; /* Color de Facebook */
+}
+
+.social-button.google {
+    color: #DB4437; /* Color de Google */
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0; /* Espacio alrededor del divisor */
+    color: var(--medium-text);
+    font-size: 0.9em;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0; /* Borde más claro */
+}
+
+.divider:not(:empty)::before {
+    margin-right: 1em; /* Más espacio a los lados del texto */
+}
+
+.divider:not(:empty)::after {
+    margin-left: 1em; /* Más espacio a los lados del texto */
+}
+
+/* Auth Form */
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacio entre grupos de formulario */
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.95em; /* Ligeramente más grande */
+    color: var(--dark-text); /* Texto más oscuro */
+    margin-bottom: 8px;
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 13px 15px; /* Un poco más de padding vertical */
+    border: 1px solid #dcdcdc; /* Borde más sutil */
+    border-radius: 5px;
+    font-size: 1em;
+    color: var(--dark-text);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
+    border-color: var(--barranquero-blue); /* Borde azul al enfocar */
+    box-shadow: 0 0 0 3px var(--barranquero-blue-light); /* Sombra azul clara */
+}
+
+.forgot-password {
+    display: block;
+    text-align: left; /* Alineado a la izquierda */
+    font-size: 0.85em;
+    color: var(--medium-text); /* Texto más gris */
+    text-decoration: none;
+    margin-top: 5px;
+    font-weight: var(--font-weight-regular); /* Texto más delgado */
+}
+
+.forgot-password a { /* Estilo específico para el enlace dentro del span */
+    color: var(--barranquero-blue); /* El enlace "Haz click aquí" es azul */
+    text-decoration: none;
+    font-weight: var(--font-weight-bold); /* Más negrita */
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+
+.auth-submit-button {
+    background-color: var(--barranquero-blue); /* El botón es azul ahora */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 25px; /* Más espacio arriba */
+}
+
+.auth-submit-button:hover {
+    background-color: #0096b7; /* Azul más oscuro al pasar el ratón */
+}
+
+.privacy-text {
+    font-size: 0.8em;
+    color: var(--medium-text); /* Más oscuro que light-text */
+    margin-top: 20px;
+    line-height: 1.4;
+    text-align: center;
+    display: flex; /* Para alinear el ícono y el texto */
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.privacy-text .fas { /* Estilo para el ícono de candado */
+    font-size: 0.9em;
+    color: var(--medium-text);
+}
+
+.privacy-text a {
+    color: var(--barranquero-blue); /* El enlace es azul ahora */
+    text-decoration: none;
+}
+
+.privacy-text a:hover {
+    text-decoration: underline;
+}
+
+.status-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-weight: var(--font-weight-semi-bold);
+    color: red; /* Default for errors */
+}
+
+/* Responsive adjustments for login/register page */
+@media (max-width: 1024px) {
+    .login-register-main {
+        justify-content: center; /* Vuelve a centrarlo en pantallas medianas y pequeñas */
+        padding-right: 0; /* Elimina el padding-right para centrar correctamente */
+    }
+    .auth-box {
+        max-width: 450px; /* Puedes ajustar este tamaño para tablets si 420px es muy pequeño */
+        margin-left: auto; /* Mantenlo o quítalo dependiendo de cómo quieras el centrado */
+        margin-right: auto;
+    }
+    .auth-header {
+        text-align: center; /* Centrar en pantallas más pequeñas si se prefiere */
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-box {
+        padding: 30px;
+        max-width: 90%;
+    }
+    .auth-header h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-register-main {
+        padding: 20px 10px;
+    }
+    .auth-box {
+        padding: 25px; /* Un poco más de padding que antes, menos que en desktop */
+        border-radius: 8px;
+    }
+    .auth-header h2 {
+        font-size: 1.8em;
+    }
+    .auth-header p {
+        font-size: 0.9em;
+    }
+    .social-login {
+        gap: 10px;
+    }
+    .social-button {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+    .social-button .fab {
+        font-size: 1em;
+    }
+    .form-group label {
+        font-size: 0.9em;
+    }
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+    .forgot-password, .privacy-text {
+        font-size: 0.8em;
+    }
+    .auth-submit-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+/* login_registro.css */
+
+/* --- ESTILOS DEL PANEL DE ADMINISTRADOR (NUEVOS AQUÍ) --- */
+
+/* Estilos generales de la sección del panel */
+.admin-panel {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* display: none; -> controlado por JS */
+}
+
+.admin-panel h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-text); /* Asegúrate de que tus variables CSS estén definidas en :root */
+}
+
+/* Sección de Login de Administrador */
+.admin-login-section {
+    margin-bottom: 30px;
+    /* Estilos de border, padding, etc., si no están ya en .admin-product-management o .admin-user-management */
+}
+
+.admin-login-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+#admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto; /* Centrar el formulario de login de admin */
+}
+
+#admin-login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#admin-login-form button {
+    padding: 10px 20px;
+    background-color: var(--barranquero-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#admin-login-form button:hover {
+    background-color: #0096b7;
+}
+
+#admin-login-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Contenido del Panel de Administrador (Gestión de Productos y Usuarios) */
+
+
+#admin-content h3 { /* Estilos para los títulos de sección del panel (Gestión de Productos, Usuarios Registrados) */
+    font-size: 1.6em;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--dark-text);
+}
+
+.admin-product-management,
+.admin-user-management {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.admin-product-management h4,
+.admin-user-management h4 {
+    margin-bottom: 15px;
+    color: var(--dark-text);
+    font-size: 1.1em;
+}
+
+#add-edit-product-form,
+#update-stock-form,
+#delete-user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px; /* Limita el ancho de los formularios */
+    margin-bottom: 20px;
+}
+
+#add-edit-product-form input,
+#update-stock-form input,
+#delete-user-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Botones de acción dentro de los formularios del panel */
+#add-edit-product-form button {
+    background-color: var(--primary-pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#add-edit-product-form button:hover {
+    background-color: #d1006a;
+}
+
+#update-stock-form button {
+    background-color: var(--barranquero-magenta); /* O un color similar si --barranquero-magenta no está definido */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#update-stock-form button:hover {
+    background-color: #c90064;
+}
+
+#delete-user-form button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#delete-user-form button:hover {
+    background-color: #cc0000;
+}
+
+/* Listas de Productos y Usuarios */
+#product-list,
+#user-list {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    min-height: 50px; /* Para que se vea algo aunque esté vacío */
+}
+
+#product-list p,
+#user-list p {
+    text-align: center;
+    color: var(--medium-text);
+}
+
+#product-list ul,
+#user-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#product-list li,
+#user-list li {
+    background-color: #f8f8f8;
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e9e9e9;
+}
+
+#product-list li button.delete-product-button {
+    background-color: #e74c3c; /* Rojo para eliminar */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.85em;
+    margin-left: 15px; /* Espacio con el texto del producto */
+}
+
+#product-list li button.delete-product-button:hover {
+    background-color: #c0392b; /* Rojo más oscuro */
+}
+
+/* Estilos del botón para alternar Login de Admin */
+.toggle-button {
+    background-color: transparent;
+    border: 1px solid var(--barranquero-blue);
+    color: var(--barranquero-blue);
+    font-size: 0.9em;
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+    margin-top: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    width: 100%;
+    display: block; /* Asegura que ocupe su propia línea */
+    text-align: center;
+}
+
+.toggle-button:hover {
+    background-color: var(--barranquero-blue);
+    color: white;
+}
+
+
+/* --- Responsive adjustments for admin panel within login_registro.html --- */
+@media (max-width: 1024px) {
+    .admin-panel {
+        padding: 40px 15px;
+        margin: 30px auto;
+    }
+    #admin-login-form,
+    #add-edit-product-form,
+    #update-stock-form,
+    #delete-user-form {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-panel {
+        padding: 30px 10px;
+    }
+    .admin-panel h2 {
+        font-size: 1.8em;
+    }
+    .admin-product-management,
+    .admin-user-management {
+        padding: 15px;
+    }
+    #product-list li,
+    #user-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    #product-list li button.delete-product-button {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+.modal-overlay {
+    position: fixed; /* Fijo en la ventana */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de opacidad */
+    display: flex; /* Usamos flexbox para centrar el contenido del modal */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todos los demás elementos */
+    opacity: 0; /* Inicialmente transparente para efecto de fade-in */
+    visibility: hidden; /* Inicialmente oculto para que no ocupe espacio ni sea interactuable */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave al aparecer/desaparecer */
+}
+
+/* Estado activo del overlay (cuando se muestra el modal) */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenido del modal (el recuadro blanco) */
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    max-width: 450px; /* Ancho máximo del recuadro */
+    width: 90%; /* Ancho responsivo */
+    text-align: center;
+    position: relative; /* Para posicionar el botón de cerrar */
+    transform: translateY(-20px); /* Pequeño desplazamiento inicial para efecto de aparición */
+    transition: transform 0.3s ease; /* Transición suave al aparecer */
+}
+
+/* Efecto de aparición del contenido del modal cuando el overlay está activo */
+.modal-overlay.active .modal-content {
+    transform: translateY(0); /* Vuelve a su posición original */
+}
+
+.modal-content p {
+    font-size: 1.1em;
+    color: var(--dark-text);
+    margin-bottom: 25px; /* Espacio debajo del texto */
+    line-height: 1.5;
+}
+
+/* Botón de cerrar (la "x") */
+.modal-content .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--medium-text);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-content .close-button:hover {
+    color: var(--primary-pink); /* Color al pasar el ratón */
+}
+
+/* Contenedor de botones dentro del modal */
+.modal-buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 15px; /* Espacio entre los botones */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+}
+
+/* Estilos para los botones del modal */
+.modal-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 150px; /* Ancho mínimo para que los botones sean legibles */
+}
+
+.modal-button.primary {
+    background-color: var(--primary-pink);
+    color: #fff;
+}
+
+.modal-button.primary:hover {
+    background-color: #d1006a; /* Tono más oscuro de rosa */
+}
+
+.modal-button.secondary {
+    background-color: #e0e0e0;
+    color: var(--dark-text);
+}
+
+.modal-button.secondary:hover {
+    background-color: #c0c0c0; /* Tono más oscuro de gris */
+}
+
+/* Media Queries para responsividad del modal */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+        max-width: 95%; /* Ocupa casi todo el ancho en móviles */
+    }
+    .modal-content p {
+        font-size: 1em;
+    }
+    .modal-buttons {
+        flex-direction: column; /* Apila los botones verticalmente */
+        gap: 10px;
+    }
+    .modal-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        min-width: unset; /* Quita el min-width en móviles si se apilan */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
